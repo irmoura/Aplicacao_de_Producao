@@ -506,81 +506,16 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         if (OPCAO_PRODUCAO_ATUAL.isSelected())
                     
                 {
-                  if ((data.dia>data.primeiro_dia_util_do_mes)  && (data.dia<data.primeiro_sabado))  
-                  {
-                     data.dias_uteis = data.dia-(data.primeira_semana-data.diferenca_primeira_semana_atual);/////// 1 A MENOS QUE NA CLASSE DATA 
-                  } 
                   
-                  else
-                  
-                  if (data.dia==data.primeiro_sabado)//SABADO
-                  {
-                      data.dias_uteis = data.dia-(data.primeira_semana-data.diferenca_primeiro_sabado);//SABADO AUMENTA 0.5
-                  } 
-                  
-                  else
-		  
-                  if ((data.dia>data.primeiro_domingo)  && (data.dia<data.segundo_sabado)) 
-                  {
-                      data.dias_uteis = data.dia-(data.segunda_semana-data.diferenca_segunda_semana_atual);
-                  } 
-                  
-                  else 
-                  
-                  if (data.dia==data.segundo_sabado) 
-                  {
-                      data.dias_uteis = data.dia-data.diferenca_segundo_sabado;//SABADO AUMENTA 0.5
-                  } 
-                  
-                  else
-                  
-                  if ((data.dia>data.segundo_domingo) && (data.dia<data.terceiro_sabado)) 
-                  {
-                      data.dias_uteis = data.dia-(data.terceira_semana-data.diferenca_terceira_semana_atual);//////////////////////
-                  } 
-                  
-                  else // 1 A MENOS QUE NA CLASSE DATA
-                  
-                  if (data.dia==data.terceiro_sabado) 
-                  {
-                      data.dias_uteis = data.dia-data.diferenca_terceiro_sabado;
-                  } 
-                  
-                  else//SABADO AUMENTA 0.5
-		  
-                  if ((data.dia>data.terceiro_domingo) && (data.dia<data.quarto_sabado)) 
-                  
-                  {
-                      data.dias_uteis = data.dia-(data.quarta_semana-data.diferenca_quarta_semana_atual);
-                  } 
-                  
-                  else// 1 A MENOS QUE NA CLASSE DATA
-                      
-                  if (data.dia==data.quarto_sabado) //SABADO
-                  
-                  {
-                      data.dias_uteis = data.dia-data.diferenca_quarto_sabado;
-                  } 
-                  
-                  else//SABADO AUMENTA 0.5
-		  
-                  if  ((data.dia>data.quarto_domingo) && (data.dia<data.quinto_sabado)) 
-                  
-                  {
-                      data.dias_uteis = data.dia-(data.quinta_semana-data.diferenca_quinta_semana_atual);
-                  } 
-                  
-                  else// 1 A MENOS QUE NA CLASSE DATA
-                      
-                  if (data.dia==data.quinto_sabado) //SABADO
-                  
-                  {
-                      data.dias_uteis = data.dia-data.diferenca_quinto_sabado;
-                  } 
-                  
-                  else//SABADO AUMENTA 0.5
-		  
-                  data.dias_uteis = data.dias_uteis_totais;
+                    if ((data.dia_do_ano == 106) && (data.dia_da_semana == 6))/*15/04/2016*/
+                    {
+                    data.dias_uteis = 12;
+                    }
+                    else
+                    if ((data.dia_do_ano == 107) && (data.dia_da_semana == 7))/*16/04/2016*/
+                    {
+                    data.dias_uteis = 12.5;
+                    }
                   
                   String TOTAL_OL_DIA_STRING = TEXTO_OL_DO_DIA.getText();
                   Double OL_DIA = Double.parseDouble(TOTAL_OL_DIA_STRING);
