@@ -7,21 +7,23 @@ import javax.swing.JOptionPane;
  * @author Ismael Ribeiro
  */
 public class DATA {
-    
-int MES_VALIDO = 3;//MES VALIDO DO APLICATIVO
-int ANO_VALIDO = 2016;//ANO VALIDO DO APLICATIVO
-String MES_VALIDO_STR = "Março";//MES VALIDO ex:"Janeiro" ...
-
-String MES_VALIDO_ABREVIADO = "MAR";//ex: "JAN"
-int DIA_BASE = 07;
 
 Calendar DIA_ATUAL = Calendar.getInstance();
 
-int dia = DIA_ATUAL.get(Calendar.DAY_OF_MONTH);// RECEBE O DIA ATUAL - AQUI TAMBÉM É POSSIVEL DEFINIR O DIA ATUAL ...(Ex: 1,2,3...31)
+public int dia = DIA_ATUAL.get(Calendar.DAY_OF_MONTH);// RECEBE O DIA ATUAL - AQUI TAMBÉM É POSSIVEL DEFINIR O DIA ATUAL ...(Ex: 1,2,3...31)
 
-int dia_da_semana = DIA_ATUAL.get(Calendar.DAY_OF_WEEK);
+public int dia_da_semana = DIA_ATUAL.get(Calendar.DAY_OF_WEEK);
 
-int dia_do_ano = DIA_ATUAL.get(Calendar.DAY_OF_YEAR);
+public int dia_do_ano = DIA_ATUAL.get(Calendar.DAY_OF_YEAR);
+
+public int mes = DIA_ATUAL.get(Calendar.MONTH);//RECEBE O MÊS ATUAL
+public int ano = DIA_ATUAL.get(Calendar.YEAR);//RECEBE O ANO ATUAL
+public int MES_VALIDO = mes;//MES VALIDO DO APLICATIVO
+public int ANO_VALIDO = ano;//ANO VALIDO DO APLICATIVO
+public static String MES_VALIDO_STR;//MES VALIDO ex:"Janeiro" ...
+public static String MES_VALIDO_ABREVIADO;//ex: "JAN"
+
+int DIA_BASE = 07;
 
 double dias_uteis_totais = 22;//TOTAL DE DIAS UTEIS DO MES ...
 
@@ -62,46 +64,24 @@ double quarto_domingo = terceiro_domingo+semana;
 double quinto_domingo = quarto_domingo+semana;
 
 ////////////////////////////////////////////////////////////////////////////////
-boolean Dia_Atual (double Dia)
+boolean Dia_Atual (double Dia){
         
-    {
-        
-        /*if ((Dia>primeiro_dia_util_do_mes) && (Dia<primeiro_domingo))
+        if ((dia_do_ano == 105) && (dia_da_semana == 5))
         {
-            this.dias_uteis = Dia - primeira_semana;//OK
-        }
-        else*/
-        if ((Dia>primeiro_domingo) && (Dia<segundo_domingo))//
-        {
-            this.dias_uteis = Dia - segunda_semana;   //AQUI ......
+            this.dias_uteis = 10;/*14/04/2016*/
         }
         else
-        if ((Dia>segundo_domingo) && (Dia<terceiro_domingo))
+        if ((dia_do_ano == 106) && (dia_da_semana == 6))
         {
-            this.dias_uteis = Dia - terceira_semana;   
+            this.dias_uteis = 11;
         }
         else
-        if ((Dia>24) && (Dia<quarto_domingo))////////////////
+        if ((dia_do_ano == 107) && (dia_da_semana == 7))
         {
-            this.dias_uteis = Dia - 6.5;
+            this.dias_uteis = 12;
         }
         else
-        if ((Dia>terceiro_domingo) && (Dia<quarto_domingo))
-        {
-            this.dias_uteis = Dia - quarta_semana;
-        }
-        else
-        if ((Dia>quarto_domingo) && (Dia<quinto_domingo))
-        {
-            this.dias_uteis = Dia - quinta_semana;
-        }/*
-        else
-        if (Dia>quinto_domingo)
-        {
-            this.dias_uteis = Dia - quinta_semana;
-        }*/
-        else
-        if ((dia_da_semana == 1) || (Dia == segundo_domingo) || (Dia == terceiro_domingo) || (Dia == quarto_domingo) || (Dia == quinto_domingo))//Ex: 1 domingo ... 2 segunda ... 3 terça ...
+        if ((dia_da_semana == 1))//Ex: 1 domingo ... 2 segunda ... 3 terça ...
         {
             JOptionPane.showMessageDialog(null,"Domingo o programa está de folga !","                        "
                     +"                  Aviso",JOptionPane.ERROR_MESSAGE);

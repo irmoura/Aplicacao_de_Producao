@@ -35,12 +35,98 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         
         initComponents();
         
+        Calendar calendario = Calendar.getInstance();
+        int Mes = calendario.get(Calendar.MONTH);
         
         DATA data = new DATA();
         Date dataSistema = new Date();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         
         DATA.setText(formato.format(dataSistema));
+        
+/********************************************************************************************************************************************************/
+        
+        /*
+        ESTE TRECHO FAZ O PROGRAMA SER VÁLIDO PARA TODO E QUALQUER MÊS
+        
+        *PODE SER DESATIVADO
+        *SE FOR DESATIVADO O MES VALIDO DA CLASSE DATA DEVE SER DEFINIDO MANUALMENTE.
+
+        */
+
+        if(Mes == 0){
+            data.MES_VALIDO = 1;
+            data.MES_VALIDO_STR = "Janeiro";
+            data.MES_VALIDO_ABREVIADO = "JAN";
+        }
+        else
+        if(Mes == 1){
+            data.MES_VALIDO = 2;
+            data.MES_VALIDO_STR = "Fevereiro";
+            data.MES_VALIDO_ABREVIADO = "FEV";
+        }
+        else
+        if(Mes == 2){
+            data.MES_VALIDO = 3;
+            data.MES_VALIDO_STR = "Março";
+            data.MES_VALIDO_ABREVIADO = "MAR";
+        }
+        else
+        if(Mes == 3){
+            data.MES_VALIDO = 4;
+            data.MES_VALIDO_STR = "Abril";
+            data.MES_VALIDO_ABREVIADO = "ABR";
+        }
+        else
+        if(Mes == 4){
+            data.MES_VALIDO = 5;
+            data.MES_VALIDO_STR = "Maio";
+            data.MES_VALIDO_ABREVIADO = "MAI";
+        }
+        else
+        if(Mes == 5){
+            data.MES_VALIDO = 6;
+            data.MES_VALIDO_STR = "Junho";
+            data.MES_VALIDO_ABREVIADO = "JUN";
+        }
+        else
+        if(Mes == 6){
+            data.MES_VALIDO = 7;
+            data.MES_VALIDO_STR = "Julho";
+            data.MES_VALIDO_ABREVIADO = "JUL";
+        }
+        else
+        if(Mes == 7){
+            data.MES_VALIDO = 8;
+            data.MES_VALIDO_STR = "Agosto";
+            data.MES_VALIDO_ABREVIADO = "AGO";
+        }
+        else
+        if(Mes == 8){
+            data.MES_VALIDO = 9;
+            data.MES_VALIDO_STR = "Setembro";
+            data.MES_VALIDO_ABREVIADO = "SET";
+        }
+        else
+        if(Mes == 9){
+            data.MES_VALIDO = 10;
+            data.MES_VALIDO_STR = "Outubro";
+            data.MES_VALIDO_ABREVIADO = "OUT";
+        }
+        else
+        if(Mes == 10){
+            data.MES_VALIDO = 11;
+            data.MES_VALIDO_STR = "Novembro";
+            data.MES_VALIDO_ABREVIADO = "NOV";
+        }
+        else
+        if(Mes == 11){
+            data.MES_VALIDO = 12;
+            data.MES_VALIDO_STR = "Dezembro";
+            data.MES_VALIDO_ABREVIADO = "DEZ";
+        }
+        
+/********************************************************************************************************************************************************/
         
         //////////////////////////
         SimpleDateFormat dia = new SimpleDateFormat("dd");
