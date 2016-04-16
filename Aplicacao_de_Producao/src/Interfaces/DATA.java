@@ -29,12 +29,21 @@ double dias_uteis_totais = 22;//TOTAL DE DIAS UTEIS DO MES ...
 
 public double dias_uteis, dias_ate_dia_base = 0;//DIAS UTEIS PASSADOS ATE O DIA BASE 05/11...
 
+public static void Aviso_de_Domingo(){
+    JOptionPane.showMessageDialog(null,"Domingo o programa está de folga !","                        "
+                    +"                  Aviso",JOptionPane.ERROR_MESSAGE);
+}
+
+public static void Happy_New_Year(){
+    JOptionPane.showMessageDialog(null,"Feliz Ano Novo !!! ","Feliz Ano Novo",JOptionPane.INFORMATION_MESSAGE);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 boolean Dia_Atual (double Dia){
             
     if ((dia_do_ano == 1) && (dia_da_semana == 6))/**/
         {
-            this.dias_uteis = 10;//HAPPY NEW YEAR
+            Happy_New_Year();
         }
         else
     if ((dia_do_ano == 2) && (dia_da_semana == 7))/**/
@@ -44,7 +53,7 @@ boolean Dia_Atual (double Dia){
         else
     if ((dia_do_ano == 3) && (dia_da_semana == 1))/**/
         {
-            this.dias_uteis = 10;
+            Aviso_de_Domingo();
         }
         else
     if ((dia_do_ano == 4) && (dia_da_semana == 2))/**/
@@ -79,7 +88,7 @@ boolean Dia_Atual (double Dia){
         else    
     if ((dia_do_ano == 10) && (dia_da_semana == 1))/**/
         {
-            this.dias_uteis = 10;
+            Aviso_de_Domingo();
         }
         else
     if ((dia_do_ano == 11) && (dia_da_semana == 2))/**/
@@ -114,7 +123,7 @@ boolean Dia_Atual (double Dia){
         else
     if ((dia_do_ano == 17) && (dia_da_semana == 1))/**/
         {
-            this.dias_uteis = 10;
+            Aviso_de_Domingo();
         }
         else
     if ((dia_do_ano == 18) && (dia_da_semana == 2))/**/
@@ -147,9 +156,9 @@ boolean Dia_Atual (double Dia){
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 24) && (dia_da_semana == 1))/************************/
+    if ((dia_do_ano == 24) && (dia_da_semana == 1))/**/
         {
-            this.dias_uteis = 10;
+            Aviso_de_Domingo();
         }
         else
     if ((dia_do_ano == 25) && (dia_da_semana == 2))/**/
@@ -184,7 +193,7 @@ boolean Dia_Atual (double Dia){
         else    
     if ((dia_do_ano == 31) && (dia_da_semana == 1))/**/
         {
-            this.dias_uteis = 10;
+            Aviso_de_Domingo();
         }
         else
     if ((dia_do_ano == 32) && (dia_da_semana == 2))/**/
@@ -219,7 +228,7 @@ boolean Dia_Atual (double Dia){
         else
     if ((dia_do_ano == 38) && (dia_da_semana == 1))/**/
         {
-            this.dias_uteis = 10;
+            Aviso_de_Domingo();
         }
         else    
     if ((dia_do_ano == 39) && (dia_da_semana == 2))/**/
@@ -254,7 +263,7 @@ boolean Dia_Atual (double Dia){
         else
     if ((dia_do_ano == 45) && (dia_da_semana == 1))/**/
         {
-            this.dias_uteis = 10;
+            Aviso_de_Domingo();
         }
         else    
     if ((dia_do_ano == 46) && (dia_da_semana == 2))/**/
@@ -289,7 +298,7 @@ boolean Dia_Atual (double Dia){
         else
     if ((dia_do_ano == 52) && (dia_da_semana == 1))/**/
         {
-            this.dias_uteis = 10;
+            Aviso_de_Domingo();
         }
         else
     if ((dia_do_ano == 53) && (dia_da_semana == 2))/**/
@@ -324,7 +333,7 @@ boolean Dia_Atual (double Dia){
         else
     if ((dia_do_ano == 59) && (dia_da_semana == 1))/**/
         {
-            this.dias_uteis = 10;
+            Aviso_de_Domingo();
         }
         else
     if ((dia_do_ano == 60) && (dia_da_semana == 2))/**/
@@ -332,12 +341,12 @@ boolean Dia_Atual (double Dia){
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 61) && (dia_da_semana == 3))/*OKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOK*/
+    if ((dia_do_ano == 61) && (dia_da_semana == 3))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 62) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 62) && (dia_da_semana == 4))/**/
         {
             this.dias_uteis = 10;
         }
@@ -347,32 +356,32 @@ boolean Dia_Atual (double Dia){
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 64) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 64) && (dia_da_semana == 6))/**/
         {
             this.dias_uteis = 10;
         }
         else    
-    if ((dia_do_ano == 65) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 65) && (dia_da_semana == 7))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 66) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 66) && (dia_da_semana == 1))/**/
+        {
+            Aviso_de_Domingo();
+        }
+        else
+    if ((dia_do_ano == 67) && (dia_da_semana == 2))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 67) && (dia_da_semana == 5))/**/
-        {
-            this.dias_uteis = 10;
-        }
-        else
-    if ((dia_do_ano == 68) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 68) && (dia_da_semana == 3))/**/
         {
             this.dias_uteis = 10;
         }
         else    
-    if ((dia_do_ano == 69) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 69) && (dia_da_semana == 4))/**/
         {
             this.dias_uteis = 10;
         }
@@ -382,32 +391,32 @@ boolean Dia_Atual (double Dia){
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 71) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 71) && (dia_da_semana == 6))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 72) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 72) && (dia_da_semana == 7))/**/
         {
             this.dias_uteis = 10;
         }
         else    
-    if ((dia_do_ano == 73) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 73) && (dia_da_semana == 1))/**/
+        {
+            Aviso_de_Domingo();
+        }
+        else
+    if ((dia_do_ano == 74) && (dia_da_semana == 2))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 74) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 75) && (dia_da_semana == 3))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 75) && (dia_da_semana == 5))/**/
-        {
-            this.dias_uteis = 10;
-        }
-        else
-    if ((dia_do_ano == 76) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 76) && (dia_da_semana == 4))/**/
         {
             this.dias_uteis = 10;
         }
@@ -417,32 +426,32 @@ boolean Dia_Atual (double Dia){
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 78) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 78) && (dia_da_semana == 6))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 79) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 79) && (dia_da_semana == 7))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 80) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 80) && (dia_da_semana == 1))/**/
+        {
+            Aviso_de_Domingo();
+        }
+        else
+    if ((dia_do_ano == 81) && (dia_da_semana == 2))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 81) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 82) && (dia_da_semana == 3))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 82) && (dia_da_semana == 5))/**/
-        {
-            this.dias_uteis = 10;
-        }
-        else
-    if ((dia_do_ano == 83) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 83) && (dia_da_semana == 4))/**/
         {
             this.dias_uteis = 10;
         }
@@ -452,32 +461,32 @@ boolean Dia_Atual (double Dia){
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 85) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 85) && (dia_da_semana == 6))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 86) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 86) && (dia_da_semana == 7))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 87) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 87) && (dia_da_semana == 1))/**/
         {
-            this.dias_uteis = 10;
+            Aviso_de_Domingo();
         }
         else    
-    if ((dia_do_ano == 88) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 88) && (dia_da_semana == 2))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 89) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 89) && (dia_da_semana == 3))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 90) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 90) && (dia_da_semana == 4))/**/
         {
             this.dias_uteis = 10;
         }
@@ -487,32 +496,32 @@ boolean Dia_Atual (double Dia){
             this.dias_uteis = 10;
         }
         else    
-    if ((dia_do_ano == 92) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 92) && (dia_da_semana == 6))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 93) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 93) && (dia_da_semana == 7))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 94) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 94) && (dia_da_semana == 1))/**/
         {
-            this.dias_uteis = 10;
+            Aviso_de_Domingo();
         }
         else
-    if ((dia_do_ano == 95) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 95) && (dia_da_semana == 2))/**/
         {
             this.dias_uteis = 10;
         }
         else    
-    if ((dia_do_ano == 96) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 96) && (dia_da_semana == 3))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 97) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 97) && (dia_da_semana == 4))/**/
         {
             this.dias_uteis = 10;
         }
@@ -522,32 +531,32 @@ boolean Dia_Atual (double Dia){
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 99) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 99) && (dia_da_semana == 6))/**/
         {
             this.dias_uteis = 10;
         }
         else    
-    if ((dia_do_ano == 100) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 100) && (dia_da_semana == 7))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 101) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 101) && (dia_da_semana == 1))/**/
+        {
+            Aviso_de_Domingo();
+        }
+        else
+    if ((dia_do_ano == 102) && (dia_da_semana == 2))/**/
         {
             this.dias_uteis = 10;
         }
         else
-    if ((dia_do_ano == 102) && (dia_da_semana == 5))/**/
-        {
-            this.dias_uteis = 10;
-        }
-        else
-    if ((dia_do_ano == 103) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 103) && (dia_da_semana == 3))/**/
         {
             this.dias_uteis = 10;
         }
         else    
-    if ((dia_do_ano == 104) && (dia_da_semana == 5))/**/
+    if ((dia_do_ano == 104) && (dia_da_semana == 4))/**/
         {
             this.dias_uteis = 10;
         }
@@ -569,8 +578,7 @@ boolean Dia_Atual (double Dia){
         else
         if ((dia_do_ano == 108) && (dia_da_semana == 1))/*17/04/2016*/
         {
-            JOptionPane.showMessageDialog(null,"Domingo o programa está de folga !","                        "
-                    +"                  Aviso",JOptionPane.ERROR_MESSAGE);
+            Aviso_de_Domingo();
         }
         else
         if ((dia_do_ano == 109) && (dia_da_semana == 2))/*18/04/2016*/
