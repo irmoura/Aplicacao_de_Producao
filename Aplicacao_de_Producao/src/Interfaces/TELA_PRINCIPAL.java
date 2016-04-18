@@ -27,6 +27,13 @@ import java.net.URL;
  */
 public class TELA_PRINCIPAL extends javax.swing.JFrame {
     
+    public static String segundos_String = "";
+    public static int minutos_int = 0;
+    public static int horas_int = 0;
+    public static String segundos = "";
+    public static String minutos = "";
+    public static String horas = "";
+    
     /**
      * Creates new form Principal
      */
@@ -219,6 +226,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         DATA = new javax.swing.JLabel();
         HORA = new javax.swing.JLabel();
         CRONOMETRO = new javax.swing.JLabel();
+        label_tempo_logado = new javax.swing.JLabel();
         IMAGEM_DE_TESTE = new javax.swing.JLabel();
         MENU = new javax.swing.JMenuBar();
         MENU_APLICACAO = new javax.swing.JMenu();
@@ -264,6 +272,15 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         CRONOMETRO.setToolTipText("");
         JanelaInternaPrincipal.add(CRONOMETRO);
         CRONOMETRO.setBounds(1290, 650, 90, 30);
+
+        label_tempo_logado.setBackground(new java.awt.Color(255, 255, 255));
+        label_tempo_logado.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        label_tempo_logado.setForeground(new java.awt.Color(255, 255, 255));
+        label_tempo_logado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_tempo_logado.setText("00:00:00");
+        JanelaInternaPrincipal.add(label_tempo_logado);
+        label_tempo_logado.setBounds(860, 650, 90, 30);
+        label_tempo_logado.getAccessibleContext().setAccessibleName("");
 
         IMAGEM_DE_TESTE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/IMAGENS/universo.jpg"))); // NOI18N
         JanelaInternaPrincipal.add(IMAGEM_DE_TESTE);
@@ -371,13 +388,83 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         obj.setVisible(true);
         obj.setTitle("Relatório de Acompanhamento de Metas Diário - "+data.MES_VALIDO_STR+" "+data.ANO_VALIDO);
     }//GEN-LAST:event_MENU_PRODUCAOActionPerformed
-
+    
+    int contador = 0;
+    
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         
+        int delay = 1000;//1000
+        //
+        timer = new Timer(delay, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                contador++;
+                
+                /////////////////////////SEGUNDOS/////////////////////////
+                if(contador < 10){
+                    segundos = "0"+contador;
+                }
+                else
+                if(contador > 9 && contador < 60){
+                    segundos = ""+contador;
+                }
+                else
+                if(contador > 59){
+                    contador = 0;
+                    segundos = "0"+contador;
+                    minutos_int++;
+                }
+                /////////////////////////SEGUNDOS/////////////////////////
+                
+                /////////////////////////MINUTOS/////////////////////////
+                if(minutos_int == 0){
+                    minutos = "00";
+                }
+                else
+                if(minutos_int > 0 && minutos_int < 10){
+                    minutos = "0"+minutos_int;
+                }
+                else
+                if(minutos_int > 0 && minutos_int > 9){
+                    minutos = ""+minutos_int;
+                }
+                
+                if(minutos_int == 60){
+                    minutos_int = 0;
+                    horas_int++;
+                }
+                
+                /////////////////////////MINUTOS/////////////////////////
+                
+                /////////////////////////HORAS/////////////////////////
+                if(horas_int == 0){
+                    horas = "00";
+                }
+                else
+                if(horas_int > 0 && horas_int < 10){
+                    horas = "0"+horas_int;
+                }
+                else
+                if(horas_int > 0 && horas_int > 9){
+                    horas = ""+horas_int;
+                }
+                
+                if(horas_int == 24){
+                    horas_int = 0;
+                }
+                
+                /////////////////////////HORAS/////////////////////////
+                    
+                label_tempo_logado.setText(horas+":"+minutos+":"+segundos);
+                
+            }
+        });
+        timer.start();
+        //
         
-        
-        //play("/Interfaces/SONS/mario");
+        //play("/Interfaces/SONS/mario");// SE 
         
         KeyboardFocusManager.getCurrentKeyboardFocusManager()
             .addKeyEventDispatcher(new KeyEventDispatcher() {
@@ -539,6 +626,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JLabel label_tempo_logado;
     // End of variables declaration//GEN-END:variables
 
     
