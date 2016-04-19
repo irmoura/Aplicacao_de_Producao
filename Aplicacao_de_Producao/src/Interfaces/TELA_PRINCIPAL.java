@@ -227,6 +227,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         DATA = new javax.swing.JLabel();
         HORA = new javax.swing.JLabel();
         CRONOMETRO = new javax.swing.JLabel();
+        ICONE_RELOGIO = new javax.swing.JLabel();
         label_tempo_logado = new javax.swing.JLabel();
         IMAGEM_DE_TESTE = new javax.swing.JLabel();
         MENU = new javax.swing.JMenuBar();
@@ -247,6 +248,8 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ibyte - Supervisão de Produção IBS F05");
+        setBackground(new java.awt.Color(0, 0, 0));
+        setForeground(new java.awt.Color(0, 0, 0));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -274,6 +277,10 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         JanelaInternaPrincipal.add(CRONOMETRO);
         CRONOMETRO.setBounds(1280, 650, 90, 30);
 
+        ICONE_RELOGIO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/IMAGENS/clock-icon-95487.png"))); // NOI18N
+        JanelaInternaPrincipal.add(ICONE_RELOGIO);
+        ICONE_RELOGIO.setBounds(1120, 540, 180, 120);
+
         label_tempo_logado.setBackground(new java.awt.Color(255, 255, 255));
         label_tempo_logado.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         label_tempo_logado.setForeground(new java.awt.Color(255, 255, 255));
@@ -283,7 +290,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         label_tempo_logado.setBounds(1000, 650, 90, 30);
         label_tempo_logado.getAccessibleContext().setAccessibleName("");
 
-        IMAGEM_DE_TESTE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/IMAGENS/universo.jpg"))); // NOI18N
+        IMAGEM_DE_TESTE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/IMAGENS/3D-Wallpaper-5_7SIBRzw.jpg"))); // NOI18N
         JanelaInternaPrincipal.add(IMAGEM_DE_TESTE);
         IMAGEM_DE_TESTE.setBounds(0, 0, 1920, 1200);
 
@@ -458,7 +465,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
                 
                 /////////////////////////HORAS/////////////////////////
                 
-                label_tempo_logado.setForeground(Color.PINK);//DEFINE A COR DO LABEL
+                //label_tempo_logado.setForeground(Color.PINK);//DEFINE A COR DO LABEL
                 label_tempo_logado.setText(horas+":"+minutos+":"+segundos);
                 
             }
@@ -613,6 +620,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JLabel CRONOMETRO;
     private javax.swing.JLabel DATA;
     private javax.swing.JLabel HORA;
+    private javax.swing.JLabel ICONE_RELOGIO;
     private javax.swing.JLabel IMAGEM_DE_TESTE;
     public javax.swing.JDesktopPane JanelaInternaPrincipal;
     private javax.swing.JMenuBar MENU;
