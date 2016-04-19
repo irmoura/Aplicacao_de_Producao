@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 import javax.swing.*;
 import java.applet.Applet;
 import java.applet.AudioClip;
+import java.awt.Color;
 import java.awt.KeyEventDispatcher;
 import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
@@ -258,7 +259,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         DATA.setForeground(new java.awt.Color(255, 255, 255));
         DATA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JanelaInternaPrincipal.add(DATA);
-        DATA.setBounds(1090, 650, 90, 30);
+        DATA.setBounds(1100, 650, 90, 30);
 
         HORA.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         HORA.setForeground(new java.awt.Color(255, 255, 255));
@@ -271,7 +272,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         CRONOMETRO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CRONOMETRO.setToolTipText("");
         JanelaInternaPrincipal.add(CRONOMETRO);
-        CRONOMETRO.setBounds(1290, 650, 90, 30);
+        CRONOMETRO.setBounds(1280, 650, 90, 30);
 
         label_tempo_logado.setBackground(new java.awt.Color(255, 255, 255));
         label_tempo_logado.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -279,7 +280,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         label_tempo_logado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_tempo_logado.setText("00:00:00");
         JanelaInternaPrincipal.add(label_tempo_logado);
-        label_tempo_logado.setBounds(860, 650, 90, 30);
+        label_tempo_logado.setBounds(1000, 650, 90, 30);
         label_tempo_logado.getAccessibleContext().setAccessibleName("");
 
         IMAGEM_DE_TESTE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/IMAGENS/universo.jpg"))); // NOI18N
@@ -371,7 +372,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1280, 760));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
     
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
@@ -456,7 +457,8 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
                 }
                 
                 /////////////////////////HORAS/////////////////////////
-                    
+                
+                label_tempo_logado.setForeground(Color.PINK);//DEFINE A COR DO LABEL
                 label_tempo_logado.setText(horas+":"+minutos+":"+segundos);
                 
             }
