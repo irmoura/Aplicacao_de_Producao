@@ -512,19 +512,40 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         timer.start();
         
         java.io.File DIRETORIO_PRINCIPAL = new java.io.File("C:\\PRODUCAO");
-        DIRETORIO_PRINCIPAL.mkdir();
-        
-        java.io.File ARQUIVO_DO_TECNICO = new java.io.File(DIRETORIO_PRINCIPAL,"TECNICO.txt");
-        
+        java.io.File DIRETORIO_SETORES = new java.io.File("C:\\PRODUCAO\\SETORES");
         java.io.File DIRETORIO_ANTEDIMENTO = new java.io.File("C:\\PRODUCAO\\ATENDIMENTO");
+        
+        DIRETORIO_SETORES.mkdir();
+        DIRETORIO_PRINCIPAL.mkdir();
         DIRETORIO_ANTEDIMENTO.mkdir();
         
+        java.io.File ARQUIVO_DO_TECNICO = new java.io.File(DIRETORIO_PRINCIPAL,"TECNICO.txt");
         java.io.File ARQUIVO_DO_ATENDENTE = new java.io.File(DIRETORIO_ANTEDIMENTO, "ATENDENTE.txt");
+        
+        java.io.File SETOR_ELETRONICA = new java.io.File(DIRETORIO_SETORES, "ELETRONICA.txt");
+        java.io.File SETOR_NOTEBOOK = new java.io.File(DIRETORIO_SETORES, "NOTEBOOK.txt");
+        java.io.File SETOR_GARANTIA = new java.io.File(DIRETORIO_SETORES, "GARANTIA.txt");
+        java.io.File SETOR_TABLET = new java.io.File(DIRETORIO_SETORES, "TABLET.txt");
+        java.io.File SETOR_IMPRESSORA = new java.io.File(DIRETORIO_SETORES, "IMPRESSORA.txt");
+        java.io.File SETOR_RECARGA = new java.io.File(DIRETORIO_SETORES, "RECARGA.txt");
+        java.io.File SETOR_LAUDO = new java.io.File(DIRETORIO_SETORES, "LAUDO.txt");
+        java.io.File SETOR_DESKTOP = new java.io.File(DIRETORIO_SETORES, "DESKTOP.txt");
+        java.io.File SETOR_ATENDIMENTO = new java.io.File(DIRETORIO_SETORES, "ATENDIMENTO.txt");
         
         try {
             
             ARQUIVO_DO_TECNICO.createNewFile();
             ARQUIVO_DO_ATENDENTE.createNewFile();
+            
+            SETOR_ELETRONICA.createNewFile();
+            SETOR_NOTEBOOK.createNewFile();
+            SETOR_GARANTIA.createNewFile();
+            SETOR_TABLET.createNewFile();
+            SETOR_IMPRESSORA.createNewFile();
+            SETOR_RECARGA.createNewFile();
+            SETOR_LAUDO.createNewFile();
+            SETOR_DESKTOP.createNewFile();
+            SETOR_ATENDIMENTO.createNewFile();
             
             } catch (IOException ex) {
             Logger.getLogger(MENU_PRODUCAO.class.getName()).log(Level.SEVERE, null, ex);
