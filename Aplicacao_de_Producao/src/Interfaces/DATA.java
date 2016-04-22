@@ -38,6 +38,10 @@ public static void Happy_New_Year(){
     JOptionPane.showMessageDialog(null,"Feliz Ano Novo !!! ","Feliz Ano Novo",JOptionPane.INFORMATION_MESSAGE);
 }
 
+public static void Feriado(){
+    JOptionPane.showMessageDialog(null,"Hoje é feriado !!! ","Feriado",JOptionPane.INFORMATION_MESSAGE);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 boolean Dia_Atual (double Dia){
             
@@ -597,6 +601,11 @@ boolean Dia_Atual (double Dia){
         }
         else
         if ((dia_do_ano == 112) && (dia_da_semana == 5))/*21/04/2016*/
+        {
+            Feriado();
+        }
+        else
+        if ((dia_do_ano == 113) && (dia_da_semana == 6))/*22/04/2016*/
         {
             this.dias_uteis = 15.5;
         }

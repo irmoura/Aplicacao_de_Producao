@@ -227,7 +227,6 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         DATA = new javax.swing.JLabel();
         HORA = new javax.swing.JLabel();
         CRONOMETRO = new javax.swing.JLabel();
-        ICONE_RELOGIO = new javax.swing.JLabel();
         label_tempo_logado = new javax.swing.JLabel();
         IMAGEM_DE_TESTE = new javax.swing.JLabel();
         MENU = new javax.swing.JMenuBar();
@@ -262,24 +261,20 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         DATA.setForeground(new java.awt.Color(255, 255, 255));
         DATA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JanelaInternaPrincipal.add(DATA);
-        DATA.setBounds(1100, 650, 90, 30);
+        DATA.setBounds(300, 650, 90, 30);
 
         HORA.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         HORA.setForeground(new java.awt.Color(255, 255, 255));
         HORA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JanelaInternaPrincipal.add(HORA);
-        HORA.setBounds(1200, 650, 87, 30);
+        HORA.setBounds(100, 650, 87, 30);
 
         CRONOMETRO.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         CRONOMETRO.setForeground(new java.awt.Color(255, 255, 255));
         CRONOMETRO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CRONOMETRO.setToolTipText("");
         JanelaInternaPrincipal.add(CRONOMETRO);
-        CRONOMETRO.setBounds(1280, 650, 90, 30);
-
-        ICONE_RELOGIO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/IMAGENS/clock-icon-95487.png"))); // NOI18N
-        JanelaInternaPrincipal.add(ICONE_RELOGIO);
-        ICONE_RELOGIO.setBounds(1120, 540, 180, 120);
+        CRONOMETRO.setBounds(200, 650, 90, 30);
 
         label_tempo_logado.setBackground(new java.awt.Color(255, 255, 255));
         label_tempo_logado.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -287,7 +282,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         label_tempo_logado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_tempo_logado.setText("00:00:00");
         JanelaInternaPrincipal.add(label_tempo_logado);
-        label_tempo_logado.setBounds(1000, 650, 90, 30);
+        label_tempo_logado.setBounds(0, 650, 90, 30);
         label_tempo_logado.getAccessibleContext().setAccessibleName("");
 
         IMAGEM_DE_TESTE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/IMAGENS/3D-Wallpaper-5_7SIBRzw.jpg"))); // NOI18N
@@ -620,7 +615,6 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JLabel CRONOMETRO;
     private javax.swing.JLabel DATA;
     private javax.swing.JLabel HORA;
-    private javax.swing.JLabel ICONE_RELOGIO;
     private javax.swing.JLabel IMAGEM_DE_TESTE;
     public javax.swing.JDesktopPane JanelaInternaPrincipal;
     private javax.swing.JMenuBar MENU;
