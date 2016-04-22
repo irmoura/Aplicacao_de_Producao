@@ -260,19 +260,21 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         DATA.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         DATA.setForeground(new java.awt.Color(255, 255, 255));
         DATA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        DATA.setToolTipText("Data do sistema");
         JanelaInternaPrincipal.add(DATA);
         DATA.setBounds(300, 650, 90, 30);
 
         HORA.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         HORA.setForeground(new java.awt.Color(255, 255, 255));
         HORA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        HORA.setToolTipText("Hora do sistema");
         JanelaInternaPrincipal.add(HORA);
         HORA.setBounds(100, 650, 87, 30);
 
         CRONOMETRO.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         CRONOMETRO.setForeground(new java.awt.Color(255, 255, 255));
         CRONOMETRO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CRONOMETRO.setToolTipText("");
+        CRONOMETRO.setToolTipText("Cronômetro");
         JanelaInternaPrincipal.add(CRONOMETRO);
         CRONOMETRO.setBounds(200, 650, 90, 30);
 
@@ -281,6 +283,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         label_tempo_logado.setForeground(new java.awt.Color(255, 255, 255));
         label_tempo_logado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_tempo_logado.setText("00:00:00");
+        label_tempo_logado.setToolTipText("Tempo de execusão do programa");
         JanelaInternaPrincipal.add(label_tempo_logado);
         label_tempo_logado.setBounds(0, 650, 90, 30);
         label_tempo_logado.getAccessibleContext().setAccessibleName("");
