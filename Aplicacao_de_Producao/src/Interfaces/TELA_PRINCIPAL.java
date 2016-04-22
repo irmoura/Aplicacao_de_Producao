@@ -532,6 +532,8 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         java.io.File SETOR_DESKTOP = new java.io.File(DIRETORIO_SETORES, "DESKTOP.txt");
         java.io.File SETOR_ATENDIMENTO = new java.io.File(DIRETORIO_SETORES, "ATENDIMENTO.txt");
         
+        FileWriter Meta_Eletronica = null;
+        
         try {
             
             ARQUIVO_DO_TECNICO.createNewFile();
@@ -547,9 +549,25 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
             SETOR_DESKTOP.createNewFile();
             SETOR_ATENDIMENTO.createNewFile();
             
+            //Meta_Eletronica = new FileWriter(SETOR_ELETRONICA);
+            
             } catch (IOException ex) {
             Logger.getLogger(MENU_PRODUCAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        //AS PARTES COMO COMENTARIO DEFINEM AUTOMATICAMENTE O VALOR DA META DIARIA DO SETOR
+        
+        /*PrintWriter gravarArq = new PrintWriter(Meta_Eletronica);
+        
+        {
+              gravarArq.println("2");
+        }
+        
+        try {
+            Meta_Eletronica.close();
+        } catch (IOException ex) {
+            Logger.getLogger(TELA_PRINCIPAL.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
         
         LOJA loja = new LOJA();
         

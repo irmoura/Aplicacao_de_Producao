@@ -413,6 +413,8 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         LAUDO laudo = new LAUDO();
         RECEPCAO recepcao = new RECEPCAO();
         
+        eletronica.Meta();//CHAMA O MÉTODO QUE DEFINE A QUANTIDADE QUE DEVE SER FEITA DIARIAMENTE DE ACORDO COM O VALOR DO ARQUIVO LIDO
+        
         DATA data = new DATA();
         data.Dia_Atual(data.dia);//METODO DA DATA
         
