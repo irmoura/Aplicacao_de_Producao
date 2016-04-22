@@ -531,6 +531,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         java.io.File SETOR_LAUDO = new java.io.File(DIRETORIO_SETORES, "LAUDO.txt");
         java.io.File SETOR_DESKTOP = new java.io.File(DIRETORIO_SETORES, "DESKTOP.txt");
         java.io.File SETOR_ATENDIMENTO = new java.io.File(DIRETORIO_SETORES, "ATENDIMENTO.txt");
+        java.io.File SETOR_RECEPCAO = new java.io.File(DIRETORIO_SETORES, "RECEPCAO.txt");
         
         FileWriter Meta_Eletronica = null;
         
@@ -548,6 +549,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
             SETOR_LAUDO.createNewFile();
             SETOR_DESKTOP.createNewFile();
             SETOR_ATENDIMENTO.createNewFile();
+            SETOR_RECEPCAO.createNewFile();
             
             //Meta_Eletronica = new FileWriter(SETOR_ELETRONICA);
             
