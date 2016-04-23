@@ -250,6 +250,12 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 0, 0));
         setForeground(new java.awt.Color(0, 0, 0));
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
@@ -418,6 +424,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
                 }
                 else
                 if(contador > 59){
+                    play("/Interfaces/SONS/animacao1");// SE
                     contador = 0;
                     segundos = "0"+contador;
                     minutos_int++;
@@ -514,10 +521,12 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         java.io.File DIRETORIO_PRINCIPAL = new java.io.File("C:\\PRODUCAO");
         java.io.File DIRETORIO_SETORES = new java.io.File("C:\\PRODUCAO\\SETORES");
         java.io.File DIRETORIO_ANTEDIMENTO = new java.io.File("C:\\PRODUCAO\\ATENDIMENTO");
+        java.io.File DIRETORIO_TECNICOS = new java.io.File("C:\\PRODUCAO\\TECNICOS");
         
         DIRETORIO_SETORES.mkdir();
         DIRETORIO_PRINCIPAL.mkdir();
         DIRETORIO_ANTEDIMENTO.mkdir();
+        DIRETORIO_TECNICOS.mkdir();
         
         java.io.File ARQUIVO_DO_TECNICO = new java.io.File(DIRETORIO_PRINCIPAL,"TECNICO.txt");
         java.io.File ARQUIVO_DO_ATENDENTE = new java.io.File(DIRETORIO_ANTEDIMENTO, "ATENDENTE.txt");
@@ -611,6 +620,20 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         JanelaInternaPrincipal.add(obj);
         obj.setVisible(true);
     }//GEN-LAST:event_MENU_PONTOActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        
+        //JOptionPane.showMessageDialog(null,"A Janela foi fechada.");
+        
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        
+        //JOptionPane.showMessageDialog(null,"A Janela foi fechada 2.");
+        
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

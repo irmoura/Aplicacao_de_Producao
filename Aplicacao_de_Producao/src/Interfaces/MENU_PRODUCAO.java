@@ -414,6 +414,14 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         RECEPCAO recepcao = new RECEPCAO();
         
         eletronica.Meta();//CHAMA O MÉTODO QUE DEFINE A QUANTIDADE QUE DEVE SER FEITA DIARIAMENTE DE ACORDO COM O VALOR DO ARQUIVO LIDO
+        notebook.Meta();
+        garantia.Meta();
+        desktop.Meta();
+        recarga.Meta();
+        impressoras.Meta();
+        tablet.Meta();
+        laudo.Meta();
+        recepcao.Meta();
         
         DATA data = new DATA();
         data.Dia_Atual(data.dia);//METODO DA DATA
@@ -555,8 +563,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
                   TEXTO_FALTA.setText(""+ismael.Metodo_Falta()+"     ou     "+Math.round(indicador.porcentagem_falta)+"%");//*****NEW*****
                   
                   BOTAO_SALVAR.setEnabled(false);  
-                  
-                    
+                     
                 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////                
         ismael.em = 2228;
