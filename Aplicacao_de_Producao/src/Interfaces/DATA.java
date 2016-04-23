@@ -609,6 +609,11 @@ boolean Dia_Atual (double Dia){
         {
             this.dias_uteis = 15.5;
         }
+        else
+        if ((dia_do_ano == 114) && (dia_da_semana == 7))/*23/04/2016*/
+        {
+            this.dias_uteis = 16.5;
+        }
     
         return false;
             
