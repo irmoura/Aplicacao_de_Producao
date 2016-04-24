@@ -21,6 +21,7 @@ import java.awt.KeyEventDispatcher;
 import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
 import java.net.URL;
+import java.util.Random;
 
 /**
  *
@@ -34,6 +35,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
     public static String segundos = "";
     public static String minutos = "";
     public static String horas = "";
+    public static int HORIZONTAL, VERTICAL;
     
     /**
      * Creates new form Principal
@@ -291,7 +293,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         label_tempo_logado.setText("00:00:00");
         label_tempo_logado.setToolTipText("Tempo de execusão do programa");
         JanelaInternaPrincipal.add(label_tempo_logado);
-        label_tempo_logado.setBounds(0, 650, 90, 30);
+        label_tempo_logado.setBounds(0, 650, 180, 40);
         label_tempo_logado.getAccessibleContext().setAccessibleName("");
 
         IMAGEM_DE_TESTE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/IMAGENS/3D-Wallpaper-5_7SIBRzw.jpg"))); // NOI18N
@@ -424,7 +426,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
                 }
                 else
                 if(contador > 59){
-                    play("/Interfaces/SONS/animacao1");// SE
+                    //play("/Interfaces/SONS/animacao1");// SE
                     contador = 0;
                     segundos = "0"+contador;
                     minutos_int++;
@@ -470,7 +472,73 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
                 
                 /////////////////////////HORAS/////////////////////////
                 
-                //label_tempo_logado.setForeground(Color.PINK);//DEFINE A COR DO LABEL
+                if((contador == 0) || (contador == 4) || (contador == 8) || (contador == 12) || (contador == 16) || (contador == 20) || 
+                  (contador == 24) || (contador == 28) || (contador == 32) || (contador == 36) || (contador == 40) || (contador == 44) || 
+                  (contador == 48) || (contador == 52) || (contador == 56)){
+                    
+                    Random numero_aleatorio1 = new Random();
+                    Random numero_aleatorio2 = new Random();
+                    
+                    HORIZONTAL = numero_aleatorio1.nextInt(1001);//NUMEROS ALEATORIOS ENTRE 0 E O NUMERO DEFINIDO MENOS 1
+                    VERTICAL = numero_aleatorio2.nextInt(651);//NUMEROS ALEATORIOS ENTRE 0 E O NUMERO DEFINIDO MENOS 1
+                    
+                    label_tempo_logado.setLocation(HORIZONTAL, VERTICAL);
+                    
+                    label_tempo_logado.setForeground(Color.CYAN);//DEFINE A COR DO LABEL
+                }
+                else
+                if((contador == 1) || (contador == 5) || (contador == 9) || (contador == 13) || (contador == 17) || (contador == 21) || 
+                  (contador == 25) || (contador == 29) || (contador == 33) || (contador == 37) || (contador == 41) || (contador == 45) || 
+                  (contador == 49) || (contador == 53) || (contador == 57)){
+                    
+                    Random numero_aleatorio1 = new Random();
+                    Random numero_aleatorio2 = new Random();
+                    
+                    HORIZONTAL = numero_aleatorio1.nextInt(1001);//NUMEROS ALEATORIOS ENTRE 0 E O NUMERO DEFINIDO MENOS 1
+                    VERTICAL = numero_aleatorio2.nextInt(651);//NUMEROS ALEATORIOS ENTRE 0 E O NUMERO DEFINIDO MENOS 1
+                    
+                    label_tempo_logado.setLocation(HORIZONTAL, VERTICAL);
+                    
+                    label_tempo_logado.setForeground(Color.RED);//DEFINE A COR DO LABEL
+                }
+                else
+                if((contador == 2) || (contador == 6) || (contador == 10) || (contador == 14) || (contador == 18) || (contador == 22) || 
+                  (contador == 26) || (contador == 30) || (contador == 34) || (contador == 38) || (contador == 42) || (contador == 46) || 
+                  (contador == 50) || (contador == 54) || (contador == 58)){
+                    
+                    Random numero_aleatorio1 = new Random();
+                    Random numero_aleatorio2 = new Random();
+                    
+                    HORIZONTAL = numero_aleatorio1.nextInt(1001);//NUMEROS ALEATORIOS ENTRE 0 E O NUMERO DEFINIDO MENOS 1
+                    VERTICAL = numero_aleatorio2.nextInt(651);//NUMEROS ALEATORIOS ENTRE 0 E O NUMERO DEFINIDO MENOS 1
+                    
+                    label_tempo_logado.setLocation(HORIZONTAL, VERTICAL);
+                    
+                    label_tempo_logado.setForeground(Color.YELLOW);//DEFINE A COR DO LABEL
+                }
+                else
+                if((contador == 3) || (contador == 7) || (contador == 11) || (contador == 15) || (contador == 19) || (contador == 23) || 
+                  (contador == 27) || (contador == 31) || (contador == 35) || (contador == 39) || (contador == 43) || (contador == 47) || 
+                  (contador == 51) || (contador == 55) || (contador == 59)){
+                    
+                    Random numero_aleatorio1 = new Random();
+                    Random numero_aleatorio2 = new Random();
+                    
+                    HORIZONTAL = numero_aleatorio1.nextInt(1001);//NUMEROS ALEATORIOS ENTRE 0 E O NUMERO DEFINIDO MENOS 1
+                    VERTICAL = numero_aleatorio2.nextInt(651);//NUMEROS ALEATORIOS ENTRE 0 E O NUMERO DEFINIDO MENOS 1
+                    
+                    label_tempo_logado.setLocation(HORIZONTAL, VERTICAL);
+                    label_tempo_logado.setForeground(Color.GREEN);//DEFINE A COR DO LABEL
+                    
+                    
+                }
+                
+                /*if(label_tempo_logado.getText().equals("00:00:10")){
+                    System.exit(0);
+                }*/
+                
+                label_tempo_logado.setFont(new java.awt.Font("Comic Sans MS", 1, 40)); //DEFINE OPÇÕES DA FONTE
+                
                 label_tempo_logado.setText(horas+":"+minutos+":"+segundos);
                 
             }
@@ -677,7 +745,9 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         });
     }
     
-    private Timer timer;
+    public Timer timer;
+    public Timer timer2;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CRONOMETRO;
     private javax.swing.JLabel DATA;
