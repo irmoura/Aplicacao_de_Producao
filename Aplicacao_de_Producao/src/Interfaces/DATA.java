@@ -614,6 +614,41 @@ boolean Dia_Atual (double Dia){
         {
             this.dias_uteis = 16.5;
         }
+        else
+        if ((dia_do_ano == 115) && (dia_da_semana == 1))/*24/04/2016*/
+        {
+            Aviso_de_Domingo();
+        }
+        else
+        if ((dia_do_ano == 116) && (dia_da_semana == 2))/*25/04/2016*/
+        {
+            this.dias_uteis = 17;
+        }
+        else
+        if ((dia_do_ano == 117) && (dia_da_semana == 3))/*26/04/2016*/
+        {
+            this.dias_uteis = 18;
+        }
+        else
+        if ((dia_do_ano == 118) && (dia_da_semana == 4))/*27/04/2016*/
+        {
+            this.dias_uteis = 19;
+        }
+        else
+        if ((dia_do_ano == 119) && (dia_da_semana == 5))/*28/04/2016*/
+        {
+            this.dias_uteis = 20;
+        }
+        else
+        if ((dia_do_ano == 120) && (dia_da_semana == 6))/*29/04/2016*/
+        {
+            this.dias_uteis = 21;
+        }
+        else
+        if ((dia_do_ano == 121) && (dia_da_semana == 7))/*30/04/2016*/
+        {
+            this.dias_uteis = 22;
+        }
     
         return false;
             
