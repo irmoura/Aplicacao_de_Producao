@@ -23,7 +23,7 @@ public class Classe_de_Teste {
         int mes = calendario.get(Calendar.MONTH);
         //mes += 1;
         
-        JOptionPane.showMessageDialog(null,""+mes);
+        JOptionPane.showMessageDialog(null,""+dia_do_ano);
         
     }
     

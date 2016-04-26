@@ -54,6 +54,8 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         
         DATA.setText(formato.format(dataSistema));
         
+        data.Data_Automatica();//CHAMA O MÉTODO QUE LER OS DIAS UTEIS PELOS ARQUIVOS TXT NOMEADOS PELOS DIAS DO ANO ...
+        
 /********************************************************************************************************************************************************/
         
         /*
@@ -590,11 +592,13 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         java.io.File DIRETORIO_SETORES = new java.io.File("C:\\PRODUCAO\\SETORES");
         java.io.File DIRETORIO_ANTEDIMENTO = new java.io.File("C:\\PRODUCAO\\ATENDIMENTO");
         java.io.File DIRETORIO_TECNICOS = new java.io.File("C:\\PRODUCAO\\TECNICOS");
+        java.io.File DIRETORIO_DATAS = new java.io.File("C:\\PRODUCAO\\DATAS");
         
         DIRETORIO_SETORES.mkdir();
         DIRETORIO_PRINCIPAL.mkdir();
         DIRETORIO_ANTEDIMENTO.mkdir();
         DIRETORIO_TECNICOS.mkdir();
+        DIRETORIO_DATAS.mkdir();
         
         java.io.File ARQUIVO_DO_TECNICO = new java.io.File(DIRETORIO_PRINCIPAL,"TECNICO.txt");
         java.io.File ARQUIVO_DO_ATENDENTE = new java.io.File(DIRETORIO_ANTEDIMENTO, "ATENDENTE.txt");
