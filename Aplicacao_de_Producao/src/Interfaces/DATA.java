@@ -68,8 +68,6 @@ public static void Data_Automatica(){
         try {
             
             dia_util_str = bufferedReader.readLine();
-            
-            JOptionPane.showMessageDialog(null,""+dia_util_str);
         
         } catch (IOException ex) {
             Logger.getLogger(DATA.class.getName()).log(Level.SEVERE, null, ex);

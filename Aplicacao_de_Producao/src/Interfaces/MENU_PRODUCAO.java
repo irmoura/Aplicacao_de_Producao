@@ -424,6 +424,9 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         recepcao.Meta();
         
         DATA data = new DATA();
+        
+        data.Data_Automatica();//CHAMA O MÉTODO QUE LER OS DIAS UTEIS PELOS ARQUIVOS TXT NOMEADOS PELOS DIAS DO ANO ...
+        
         data.Dia_Atual(data.dia);//METODO DA DATA
         
         INDICADOR indicador = new INDICADOR();

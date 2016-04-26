@@ -54,8 +54,6 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         
         DATA.setText(formato.format(dataSistema));
         
-        data.Data_Automatica();//CHAMA O MÉTODO QUE LER OS DIAS UTEIS PELOS ARQUIVOS TXT NOMEADOS PELOS DIAS DO ANO ...
-        
 /********************************************************************************************************************************************************/
         
         /*
