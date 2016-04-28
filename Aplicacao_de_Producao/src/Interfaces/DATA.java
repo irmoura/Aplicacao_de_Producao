@@ -16,7 +16,8 @@ import javax.swing.JOptionPane;
 public class DATA {
 
 public static String dia_util_str;    
-public static String dias_uteis_totais_str;    
+public static String dias_uteis_totais_str;
+public static String dia_base_str;
 
 Calendar DIA_ATUAL = Calendar.getInstance();
 
@@ -33,7 +34,7 @@ public int ANO_VALIDO = ano;//ANO VALIDO DO APLICATIVO
 public static String MES_VALIDO_STR;//MES VALIDO ex:"Janeiro" ...
 public static String MES_VALIDO_ABREVIADO;//ex: "JAN"
 
-int DIA_BASE = 07;//O DIA BASE SEMPRE É DEFINIDO MANUALMENTE
+public int DIA_BASE;//O DIA BASE SEMPRE É DEFINIDO MANUALMENTE
 
 public double dias_uteis_totais;//TOTAL DE DIAS UTEIS DO MES ...
 
@@ -70,6 +71,7 @@ public static void Data_Automatica(){
             
             dia_util_str = bufferedReader.readLine();
             dias_uteis_totais_str = bufferedReader.readLine();
+            dia_base_str = bufferedReader.readLine();
         
         } catch (IOException ex) {
             Logger.getLogger(DATA.class.getName()).log(Level.SEVERE, null, ex);
@@ -86,6 +88,7 @@ boolean Dia_Atual (double Dia){
         
         this.dias_uteis_totais = Double.parseDouble(dias_uteis_totais_str);
         this.dias_uteis = Double.parseDouble(dia_util_str);
+        this.DIA_BASE = Integer.parseInt(dia_base_str);
     
         return false;
             

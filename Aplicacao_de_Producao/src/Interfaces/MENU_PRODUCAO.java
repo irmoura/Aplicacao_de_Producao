@@ -37,6 +37,9 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         //TEXTO_TOTAL_OL.setDocument(new LIMITE_DE_DIGITOS_EM(3));//COM ESSA LINHA DEU ERRO NA CONTAGEM ... :/
         //TEXTO_OL_DO_DIA.setDocument(new LIMITE_DE_DIGITOS_EM(3));//-----------------
         
+        data.Data_Automatica();//DEFINE O DIA BASE ATRAVES DO ARQUIVO TXT
+        data.Dia_Atual(data.dia);//DEFINE O DIA BASE ATRAVES DO ARQUIVO TXT
+        
         BOTAO_SALVAR.setToolTipText("Salvar");//MOSTRA UM TEXTO AO PASSAR MOUSE EM CIMA
         BOTAO_SAIR.setToolTipText("Sair");
         BOTAO_ATUAL.setToolTipText("Atual");
