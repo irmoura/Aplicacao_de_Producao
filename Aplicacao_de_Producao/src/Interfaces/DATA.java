@@ -34,7 +34,7 @@ public static String MES_VALIDO_ABREVIADO;//ex: "JAN"
 
 int DIA_BASE = 07;//O DIA BASE SEMPRE É DEFINIDO MANUALMENTE
 
-double dias_uteis_totais = 22;//TOTAL DE DIAS UTEIS DO MES ...
+public double dias_uteis_totais;//TOTAL DE DIAS UTEIS DO MES ...
 
 public double dias_uteis, dias_ate_dia_base = 0;//DIAS UTEIS PASSADOS ATE O DIA BASE 05/11...
 
@@ -81,6 +81,53 @@ public static void Data_Automatica(){
 
 ////////////////////////////////////////////////////////////////////////////////
 boolean Dia_Atual (double Dia){
+    
+        if(mes == 0){//JAN
+            dias_uteis_totais = 22;
+        }
+        else
+        if(mes == 1){//FEV
+            dias_uteis_totais = 22;
+        }
+        else
+        if(mes == 2){//MAR
+            dias_uteis_totais = 22;
+        }
+        else
+        if(mes == 3){//ABR
+            dias_uteis_totais = 22;
+        }
+        if(mes == 4){//MAI
+            dias_uteis_totais = 22;
+        }
+        else
+        if(mes == 5){//JUN
+            dias_uteis_totais = 22;
+        }
+        else
+        if(mes == 6){//JUL
+            dias_uteis_totais = 22;
+        }
+        else
+        if(mes == 7){//AGO
+            dias_uteis_totais = 22;
+        }
+        else
+        if(mes == 8){//SET
+            dias_uteis_totais = 22;
+        }
+        else
+        if(mes == 9){//OUT
+            dias_uteis_totais = 22;
+        }
+        else
+        if(mes == 10){//NOV
+            dias_uteis_totais = 22;
+        }
+        else
+        if(mes == 11){//DEZ
+            dias_uteis_totais = 22;
+        }
             
         this.dias_uteis = Double.parseDouble(dia_util_str);
     
