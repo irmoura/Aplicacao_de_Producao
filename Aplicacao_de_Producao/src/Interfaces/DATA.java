@@ -16,7 +16,8 @@ import javax.swing.JOptionPane;
 public class DATA {
 
 public static String dia_util_str;    
-    
+public static String dias_uteis_totais_str;    
+
 Calendar DIA_ATUAL = Calendar.getInstance();
 
 public int dia = DIA_ATUAL.get(Calendar.DAY_OF_MONTH);// RECEBE O DIA ATUAL - AQUI TAMBÉM É POSSIVEL DEFINIR O DIA ATUAL ...(Ex: 1,2,3...31)
@@ -68,6 +69,7 @@ public static void Data_Automatica(){
         try {
             
             dia_util_str = bufferedReader.readLine();
+            dias_uteis_totais_str = bufferedReader.readLine();
         
         } catch (IOException ex) {
             Logger.getLogger(DATA.class.getName()).log(Level.SEVERE, null, ex);
@@ -81,54 +83,8 @@ public static void Data_Automatica(){
 
 ////////////////////////////////////////////////////////////////////////////////
 boolean Dia_Atual (double Dia){
-    
-        if(mes == 0){//JAN
-            dias_uteis_totais = 22;
-        }
-        else
-        if(mes == 1){//FEV
-            dias_uteis_totais = 22;
-        }
-        else
-        if(mes == 2){//MAR
-            dias_uteis_totais = 22;
-        }
-        else
-        if(mes == 3){//ABR
-            dias_uteis_totais = 22;
-        }
-        if(mes == 4){//MAI
-            dias_uteis_totais = 22;
-        }
-        else
-        if(mes == 5){//JUN
-            dias_uteis_totais = 22;
-        }
-        else
-        if(mes == 6){//JUL
-            dias_uteis_totais = 22;
-        }
-        else
-        if(mes == 7){//AGO
-            dias_uteis_totais = 22;
-        }
-        else
-        if(mes == 8){//SET
-            dias_uteis_totais = 22;
-        }
-        else
-        if(mes == 9){//OUT
-            dias_uteis_totais = 22;
-        }
-        else
-        if(mes == 10){//NOV
-            dias_uteis_totais = 22;
-        }
-        else
-        if(mes == 11){//DEZ
-            dias_uteis_totais = 22;
-        }
-            
+        
+        this.dias_uteis_totais = Double.parseDouble(dias_uteis_totais_str);
         this.dias_uteis = Double.parseDouble(dia_util_str);
     
         return false;
