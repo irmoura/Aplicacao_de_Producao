@@ -430,7 +430,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
     private void BOTAO_RESULTADOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_RESULTADOActionPerformed
         // TODO add your handling code here:
         
-        Arquivo();
+        Arquivo();//CHAMA O MÉTODO DA LEITURA DO ARQUIVO TXT
         
         BOTAO_SALVAR.setEnabled(false);//COM A OPCAO "ATUAL" DESMARCADA O BOTAO SALVAR FICA VISIVEL !
         FALTA_.setText("FALTA");
@@ -522,6 +522,20 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         TEXTO_MEDIA_DIARIA.setText(""+deci.format(indicador.media_diaria));
         if (indicador.media_diaria < eletronica.dia) {TEXTO_MEDIA_DIARIA.setBackground(Color.RED);}
         else {TEXTO_MEDIA_DIARIA.setBackground(Color.BLUE); }
+        
+        /////////////////////////////////////////////////////////////
+        
+        indicador.porcentagem_dias_uteis = (data.dias_uteis/data.dias_uteis_totais)*100;//*****NEW*****
+        
+        Double dias_rest = (data.dias_uteis_totais-data.dias_uteis);
+        
+        indicador.porcentagem_dias_uteis_restantes = (dias_rest/data.dias_uteis_totais)*100;//*****NEW*****
+        
+        String DiasUteis = Double.toString(data.dias_uteis);
+        TEXTO_DIAS_UTEIS.setText(DiasUteis+"     ou     "+Math.round(indicador.porcentagem_dias_uteis)+"%");
+        
+        String Dias_Uteis_restantes = Double.toString(data.dias_uteis_totais-data.dias_uteis);
+        TEXTO_DIAS_UTEIS_RESTANTES.setText(Dias_Uteis_restantes+"     ou     "+Math.round(indicador.porcentagem_dias_uteis_restantes)+"%");
         
         /////////////////////////CODIGO ANTIGO/////////////////////
         
@@ -1668,19 +1682,6 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         {
             JOptionPane.showMessageDialog(null,"Nenhum usuário gravado ou EM inválido ...","Aviso",JOptionPane.INFORMATION_MESSAGE);
         }*/
-        
-        indicador.porcentagem_dias_uteis = (data.dias_uteis/data.dias_uteis_totais)*100;//*****NEW*****
-        
-        Double dias_rest = (data.dias_uteis_totais-data.dias_uteis);
-        
-        indicador.porcentagem_dias_uteis_restantes = (dias_rest/data.dias_uteis_totais)*100;//*****NEW*****
-        
-        String DiasUteis = Double.toString(data.dias_uteis);
-        TEXTO_DIAS_UTEIS.setText(DiasUteis+"     ou     "+Math.round(indicador.porcentagem_dias_uteis)+"%");
-        
-        String Dias_Uteis_restantes = Double.toString(data.dias_uteis_totais-data.dias_uteis);
-        TEXTO_DIAS_UTEIS_RESTANTES.setText(Dias_Uteis_restantes+"     ou     "+Math.round(indicador.porcentagem_dias_uteis_restantes)+"%");
-        //}
         
     }//GEN-LAST:event_BOTAO_RESULTADOActionPerformed
 
