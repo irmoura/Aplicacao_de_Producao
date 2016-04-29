@@ -27,6 +27,14 @@ import java.text.*;
  * @author Ismael Ribeiro
  */
 public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
+    
+    public static String em;
+    public static String total_de_ol;
+    public static String porcentagem_de_producao;
+    public static String nome;
+    public static String setor;
+    public static String porcentagem_dia_base;
+    
     /**
      * Creates new form 
      */
@@ -49,7 +57,35 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         BOTAO_RESULTADO.setToolTipText("Resultado");
         DIABASE_.setText("DIA BASE "+data.DIA_BASE+"/ "+data.MES_VALIDO_ABREVIADO);
     }
+    
+    public void Arquivo(){
+        File dir = new File("C:\\PRODUCAO\\");
 
+        File arq = new File(dir,"TECNICO.txt");
+        
+        try {
+        
+        FileReader fileReader = new FileReader(arq);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        
+            try {
+                
+                this.em = bufferedReader.readLine();
+                this.total_de_ol = bufferedReader.readLine();
+                this.porcentagem_de_producao = bufferedReader.readLine();
+                this.nome = bufferedReader.readLine();
+                this.setor = bufferedReader.readLine();
+                this.porcentagem_dia_base = bufferedReader.readLine();
+                
+            } catch (IOException ex) {
+                Logger.getLogger(MENU_PRODUCAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        } catch (FileNotFoundException ex) {
+        Logger.getLogger(MENU_PRODUCAO.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -297,6 +333,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
 
         BOTAO_SALVAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/IMAGENS/disquete.jpg"))); // NOI18N
         BOTAO_SALVAR.setBorder(null);
+        BOTAO_SALVAR.setEnabled(false);
         BOTAO_SALVAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BOTAO_SALVARActionPerformed(evt);
@@ -393,7 +430,102 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
     private void BOTAO_RESULTADOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_RESULTADOActionPerformed
         // TODO add your handling code here:
         
-        for (int i = 0; i < 2; i ++)
+        Arquivo();
+        
+        BOTAO_SALVAR.setEnabled(false);//COM A OPCAO "ATUAL" DESMARCADA O BOTAO SALVAR FICA VISIVEL !
+        FALTA_.setText("FALTA");
+        TEXTO_FALTA.setBackground(Color.WHITE);
+        
+        ELETRONICA eletronica = new ELETRONICA();
+        NOTEBOOK notebook = new NOTEBOOK();
+        GARANTIA garantia = new GARANTIA();
+        DESKTOP desktop = new DESKTOP();
+        RECARGA recarga = new RECARGA();
+        IMPRESSORAS impressoras = new IMPRESSORAS();
+        TABLET tablet = new TABLET();
+        LAUDO laudo = new LAUDO();
+        RECEPCAO recepcao = new RECEPCAO();
+        
+        eletronica.Meta();//CHAMA O MÉTODO QUE DEFINE A QUANTIDADE QUE DEVE SER FEITA DIARIAMENTE DE ACORDO COM O VALOR DO ARQUIVO LIDO
+        notebook.Meta();
+        garantia.Meta();
+        desktop.Meta();
+        recarga.Meta();
+        impressoras.Meta();
+        tablet.Meta();
+        laudo.Meta();
+        recepcao.Meta();
+        
+        DATA data = new DATA();
+        
+        data.Data_Automatica();//CHAMA O MÉTODO QUE LER OS DIAS UTEIS PELOS ARQUIVOS TXT NOMEADOS PELOS DIAS DO ANO ...
+        
+        data.Dia_Atual(data.dia);//METODO DA DATA
+        
+        INDICADOR indicador = new INDICADOR();
+        
+        TECNICO tecnico = new TECNICO();
+        
+        tecnico.em = Integer.parseInt(em);
+        String em_tecnico = Integer.toString(tecnico.em);
+        tecnico.nome = nome;
+        tecnico.setor = setor;
+        tecnico.porcentagem_dia_base = Double.parseDouble(porcentagem_dia_base);
+        
+        indicador.eletronica = eletronica.dia*data.dias_uteis;//MULTIPLICA O N° DE MAQUINAS A SEREM FEITAS POR DIA VEZES OS DIAS ÚTEIS PASSADOS ...
+	indicador.dia_base = eletronica.dia*data.dias_ate_dia_base;
+        tecnico.total_ol = Double.parseDouble(total_de_ol);//RECEBE O VALOR DIGITADO
+        indicador.media_diaria = tecnico.total_ol/(indicador.eletronica/eletronica.dia);
+        tecnico.previsto = eletronica.dia*data.dias_uteis_totais; 
+        indicador.porcentagem_total = (tecnico.total_ol/indicador.eletronica)*100;
+        indicador.porcentagem_falta = (tecnico.total_ol/tecnico.previsto)*100;//*****NEW*****
+	tecnico.diferenca_geral = tecnico.porcentagem_dia_base - indicador.porcentagem_total;
+        
+        TEXTO_SETOR.setText(tecnico.setor);
+        TEXTO_NOME.setText(tecnico.nome); 
+        TEXTO_EM.setText(em_tecnico);
+        TEXTO_PROJETADO.setText(""+Math.round(indicador.porcentagem_total));
+        TEXTO_TOTAL_OL.setText(total_de_ol);
+        
+        if (tecnico.Metodo_Falta() > 0){
+        TEXTO_FALTA.setText(""+tecnico.Metodo_Falta()+"     ou     "+Math.round(100-indicador.porcentagem_falta)+"%");//*****NEW***** QUANDO FALTA !!!
+        }
+        else
+        if (tecnico.Metodo_Falta() < 0){
+        TEXTO_FALTA.setBackground(Color.BLUE);
+        FALTA_.setText("ACIMA");
+        TEXTO_FALTA.setText(""+(tecnico.Metodo_Falta())+"     ou     "+Math.round(100-indicador.porcentagem_falta)+"%");//*****NEW*****
+        }
+        else
+        if (tecnico.Metodo_Falta() == 0){//NA MÉDIA !!!
+        TEXTO_FALTA.setBackground(Color.BLUE);
+        FALTA_.setText("");
+        TEXTO_FALTA.setText("100% DE APROVEITAMENTO !!!");//*****NEW*****
+        }
+        
+        TEXTO_PREVISTO.setText(""+tecnico.previsto);
+        
+        if (tecnico.diferenca_geral < tecnico.porcentagem_dia_base){
+        TEXTO_DIFERENCA_GERAL.setText(""+Math.round(tecnico.diferenca_geral - tecnico.diferenca_geral - tecnico.diferenca_geral)+"%");
+        }
+        
+        TEXTO_DIA_BASE.setText(tecnico.porcentagem_dia_base+"%");
+        if (indicador.porcentagem_total >= 100){TEXTO_PROJETADO.setBackground(Color.BLUE);}//MUDA COR DO PROJETADO
+        else
+        if ((indicador.porcentagem_total < 100) && (indicador.porcentagem_total >= 80)){TEXTO_PROJETADO.setBackground(Color.YELLOW);}
+        else{TEXTO_PROJETADO.setBackground(Color.RED); }
+        if (tecnico.porcentagem_dia_base >= 100){TEXTO_DIA_BASE.setBackground(Color.BLUE);}//MUDA COR DO DIA BASE
+        else
+        if ((tecnico.porcentagem_dia_base < 100) && (tecnico.porcentagem_dia_base >= 80)){TEXTO_DIA_BASE.setBackground(Color.YELLOW);}
+        else{TEXTO_DIA_BASE.setBackground(Color.RED); }
+        DecimalFormat deci = new DecimalFormat("0.00");
+        TEXTO_MEDIA_DIARIA.setText(""+deci.format(indicador.media_diaria));
+        if (indicador.media_diaria < eletronica.dia) {TEXTO_MEDIA_DIARIA.setBackground(Color.RED);}
+        else {TEXTO_MEDIA_DIARIA.setBackground(Color.BLUE); }
+        
+        /////////////////////////CODIGO ANTIGO/////////////////////
+        
+        /*for (int i = 0; i < 2; i ++)
             
         {    
         
@@ -523,12 +655,12 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
                     
                 {
                   
-                    if ((data.dia_do_ano == 106) && (data.dia_da_semana == 6))/*15/04/2016*/
+                    if ((data.dia_do_ano == 106) && (data.dia_da_semana == 6))//15/04/2016
                     {
                     data.dias_uteis = 12;
                     }
                     else
-                    if ((data.dia_do_ano == 107) && (data.dia_da_semana == 7))/*16/04/2016*/
+                    if ((data.dia_do_ano == 107) && (data.dia_da_semana == 7))//16/04/2016
                     {
                     data.dias_uteis = 12.5;
                     }
@@ -741,7 +873,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         randbrito.nome = "RAND BRITO";
         randbrito.setor = "COTAÇÃO";
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////*ATENDENTES*//////////////////////////////////////////////        
+///////////////////////////////////////////////////*ATENDENTES//////////////////////////////////////////////        
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
         carol.em = 2764;
         String em_carol = Integer.toString(carol.em);
@@ -908,9 +1040,9 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
             
         if (TEXTO_EM.getText().equals(em_paulo))
             
-        /*{
-            JOptionPane.showMessageDialog(null,"Colaborador de férias ...");
-        }*/
+        //{
+        //    JOptionPane.showMessageDialog(null,"Colaborador de férias ...");
+        //}
         
         {
                 indicador.eletronica = eletronica.dia*data.dias_uteis;//MULTIPLICA O N° DE MAQUINAS A SEREM FEITAS POR DIA VEZES OS DIAS ÚTEIS PASSADOS ...
@@ -1201,9 +1333,9 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         else
             
         if (TEXTO_EM.getText().equals(em_emmanuel))
-        /*{
-            JOptionPane.showMessageDialog(null,"Colaborador de férias ...");
-        }*/
+        //{
+        //    JOptionPane.showMessageDialog(null,"Colaborador de férias ...");
+        //}
         {
             indicador.garantia = garantia.dia*data.dias_uteis;//MULTIPLICA O N° DE MAQUINAS A SEREM FEITAS POR DIA VEZES OS DIAS ÚTEIS PASSADOS ...
                 indicador.dia_base = garantia.dia*data.dias_ate_dia_base;    
@@ -1409,9 +1541,9 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         else
             
         if (TEXTO_EM.getText().equals(em_alexviana))
-        /*{
-            JOptionPane.showMessageDialog(null,"Colaborador de férias ...");
-        }*/
+        //{
+        //    JOptionPane.showMessageDialog(null,"Colaborador de férias ...");
+        //}
         
         { 
             indicador.desktop = desktop.dia*data.dias_uteis;//MULTIPLICA O N° DE MAQUINAS A SEREM FEITAS POR DIA VEZES OS DIAS ÚTEIS PASSADOS ...
@@ -1535,7 +1667,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         else
         {
             JOptionPane.showMessageDialog(null,"Nenhum usuário gravado ou EM inválido ...","Aviso",JOptionPane.INFORMATION_MESSAGE);
-        }
+        }*/
         
         indicador.porcentagem_dias_uteis = (data.dias_uteis/data.dias_uteis_totais)*100;//*****NEW*****
         
@@ -1548,7 +1680,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         
         String Dias_Uteis_restantes = Double.toString(data.dias_uteis_totais-data.dias_uteis);
         TEXTO_DIAS_UTEIS_RESTANTES.setText(Dias_Uteis_restantes+"     ou     "+Math.round(indicador.porcentagem_dias_uteis_restantes)+"%");
-        }
+        //}
         
     }//GEN-LAST:event_BOTAO_RESULTADOActionPerformed
 
