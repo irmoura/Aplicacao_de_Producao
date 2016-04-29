@@ -474,7 +474,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         
         if(setor.equals("ELETRONICA")){
             
-            indicador.eletronica = eletronica.dia*data.dias_uteis;//MULTIPLICA O N° DE MAQUINAS A SEREM FEITAS POR DIA VEZES OS DIAS ÚTEIS PASSADOS ...
+        indicador.eletronica = eletronica.dia*data.dias_uteis;//MULTIPLICA O N° DE MAQUINAS A SEREM FEITAS POR DIA VEZES OS DIAS ÚTEIS PASSADOS ...
 	indicador.dia_base = eletronica.dia*data.dias_ate_dia_base;
         tecnico.total_ol = Double.parseDouble(total_de_ol);//RECEBE O VALOR DIGITADO
         indicador.media_diaria = tecnico.total_ol/(indicador.eletronica/eletronica.dia);
@@ -533,18 +533,18 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
             
         indicador.recepcao = recepcao.dia*data.dias_uteis;//MULTIPLICA O N° DE MAQUINAS A SEREM FEITAS POR DIA VEZES OS DIAS ÚTEIS PASSADOS ...
 	indicador.dia_base = recepcao.dia*data.dias_ate_dia_base;
-        TOTALDEOL.setText("TOTAL DE OS");
-        OLDODIA.setText("OS DO DIA");
         tecnico.total_ol = Double.parseDouble(total_de_ol);//RECEBE O VALOR DIGITADO
         indicador.media_diaria = tecnico.total_ol/(indicador.recepcao/recepcao.dia);
         tecnico.previsto = recepcao.dia*data.dias_uteis_totais; 
-	indicador.porcentagem_total = (tecnico.total_ol/indicador.recepcao)*100;
+        indicador.porcentagem_total = (tecnico.total_ol/indicador.recepcao)*100;
         indicador.porcentagem_falta = (tecnico.total_ol/tecnico.previsto)*100;//*****NEW*****
 	tecnico.diferenca_geral = tecnico.porcentagem_dia_base - indicador.porcentagem_total;
+        
         TEXTO_SETOR.setText(tecnico.setor);
         TEXTO_NOME.setText(tecnico.nome); 
         TEXTO_EM.setText(em_tecnico);
         TEXTO_PROJETADO.setText(""+Math.round(indicador.porcentagem_total));
+        TEXTO_TOTAL_OL.setText(total_de_ol);
         
         if (tecnico.Metodo_Falta() > 0){
         TEXTO_FALTA.setText(""+tecnico.Metodo_Falta()+"     ou     "+Math.round(100-indicador.porcentagem_falta)+"%");//*****NEW***** QUANDO FALTA !!!
@@ -589,41 +589,55 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         if(setor.equals("DESKTOP")){
             
         indicador.desktop = desktop.dia*data.dias_uteis;//MULTIPLICA O N° DE MAQUINAS A SEREM FEITAS POR DIA VEZES OS DIAS ÚTEIS PASSADOS ...
-        indicador.dia_base = desktop.dia*data.dias_ate_dia_base;    
-        String TOTAL_OL_STRING = total_de_ol;
-        tecnico.total_ol = Double.parseDouble(TOTAL_OL_STRING);
-        indicador.media_diaria = tecnico.total_ol/(indicador.notebook/notebook.dia);
-        tecnico.previsto = notebook.dia*data.dias_uteis_totais;
-	indicador.porcentagem_total = (tecnico.total_ol/indicador.notebook)*100;
-        tecnico.porcentagem_dia_base = tecnico.porcentagem_dia_base;
-        tecnico.diferenca_geral = tecnico.porcentagem_dia_base - indicador.porcentagem_total;
+	indicador.dia_base = desktop.dia*data.dias_ate_dia_base;
+        tecnico.total_ol = Double.parseDouble(total_de_ol);//RECEBE O VALOR DIGITADO
+        indicador.media_diaria = tecnico.total_ol/(indicador.desktop/desktop.dia);
+        tecnico.previsto = desktop.dia*data.dias_uteis_totais; 
+        indicador.porcentagem_total = (tecnico.total_ol/indicador.desktop)*100;
+        indicador.porcentagem_falta = (tecnico.total_ol/tecnico.previsto)*100;//*****NEW*****
+	tecnico.diferenca_geral = tecnico.porcentagem_dia_base - indicador.porcentagem_total;
+        
         TEXTO_SETOR.setText(tecnico.setor);
         TEXTO_NOME.setText(tecnico.nome); 
         TEXTO_EM.setText(em_tecnico);
-        String Porcentagem_total = Double.toString(Math.round(indicador.porcentagem_total));
-        TEXTO_PROJETADO.setText(Porcentagem_total);
-        double Falta = tecnico.Metodo_Falta();
-        TEXTO_FALTA.setText(""+Falta);
-        String Previsto = Double.toString(tecnico.previsto);
-        TEXTO_PREVISTO.setText(Previsto);
-        String Diferenca_geral = Double.toString(Math.round(tecnico.diferenca_geral));
-        TEXTO_DIFERENCA_GERAL.setText(Diferenca_geral);
-        String DiaBase = Double.toString(Math.round(tecnico.porcentagem_dia_base));
-        TEXTO_DIA_BASE.setText(DiaBase+"%");
-        if (indicador.porcentagem_total >= 100){TEXTO_PROJETADO.setBackground(Color.BLUE);}
+        TEXTO_PROJETADO.setText(""+Math.round(indicador.porcentagem_total));
+        TEXTO_TOTAL_OL.setText(total_de_ol);
+        
+        if (tecnico.Metodo_Falta() > 0){
+        TEXTO_FALTA.setText(""+tecnico.Metodo_Falta()+"     ou     "+Math.round(100-indicador.porcentagem_falta)+"%");//*****NEW***** QUANDO FALTA !!!
+        }
+        else
+        if (tecnico.Metodo_Falta() < 0){
+        TEXTO_FALTA.setBackground(Color.BLUE);
+        FALTA_.setText("ACIMA");
+        TEXTO_FALTA.setText(""+(tecnico.Metodo_Falta())+"     ou     "+Math.round(100-indicador.porcentagem_falta)+"%");//*****NEW*****
+        }
+        else
+        if (tecnico.Metodo_Falta() == 0){//NA MÉDIA !!!
+        TEXTO_FALTA.setBackground(Color.BLUE);
+        FALTA_.setText("");
+        TEXTO_FALTA.setText("100% DE APROVEITAMENTO !!!");//*****NEW*****
+        }
+        
+        TEXTO_PREVISTO.setText(""+tecnico.previsto);
+        
+        if (tecnico.diferenca_geral < tecnico.porcentagem_dia_base){
+        TEXTO_DIFERENCA_GERAL.setText(""+Math.round(tecnico.diferenca_geral - tecnico.diferenca_geral - tecnico.diferenca_geral)+"%");
+        }
+        
+        TEXTO_DIA_BASE.setText(tecnico.porcentagem_dia_base+"%");
+        if (indicador.porcentagem_total >= 100){TEXTO_PROJETADO.setBackground(Color.BLUE);}//MUDA COR DO PROJETADO
         else
         if ((indicador.porcentagem_total < 100) && (indicador.porcentagem_total >= 80)){TEXTO_PROJETADO.setBackground(Color.YELLOW);}
         else{TEXTO_PROJETADO.setBackground(Color.RED); }
-        
-        DecimalFormat deci = new DecimalFormat("0.00");
-        TEXTO_MEDIA_DIARIA.setText(""+deci.format(indicador.media_diaria));
-        if (indicador.media_diaria < notebook.dia) {TEXTO_MEDIA_DIARIA.setBackground(Color.RED);}
-        else {TEXTO_MEDIA_DIARIA.setBackground(Color.BLUE); }
-        
         if (tecnico.porcentagem_dia_base >= 100){TEXTO_DIA_BASE.setBackground(Color.BLUE);}//MUDA COR DO DIA BASE
         else
         if ((tecnico.porcentagem_dia_base < 100) && (tecnico.porcentagem_dia_base >= 80)){TEXTO_DIA_BASE.setBackground(Color.YELLOW);}
         else{TEXTO_DIA_BASE.setBackground(Color.RED); }
+        DecimalFormat deci = new DecimalFormat("0.00");
+        TEXTO_MEDIA_DIARIA.setText(""+deci.format(indicador.media_diaria));
+        if (indicador.media_diaria < desktop.dia) {TEXTO_MEDIA_DIARIA.setBackground(Color.RED);}
+        else {TEXTO_MEDIA_DIARIA.setBackground(Color.BLUE); }
             
         }
         
