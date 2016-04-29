@@ -643,18 +643,10 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         
         /////////////////////////CODIGO ANTIGO/////////////////////
         
-        for (int i = 0; i < 2; i ++)
-            
-        {    
-        
-        String TOTAL_DE_OL_DO_BANCO_DE_DADOS = "";
-        String PROJETADO_DO_BANCO_DE_DADOS = "";
-        String TECNICO_DO_BANCO_DE_DADOS = "";
-        
         
         if ((OPCAO_DEFINIR_DIA.isSelected()) && (OPCAO_PRODUCAO_ATUAL.isSelected()))
         {
-            for(i=0; i<1;i++)
+            for(int i=0; i<1;i++)
             {
                 JOptionPane.showMessageDialog(null,"Você não pode selecionar as duas opções simultaneamente ...","Aviso",JOptionPane.WARNING_MESSAGE); 
             }
@@ -680,60 +672,28 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
             COMBO_DIA.setEnabled(false);
         }
         
-        if (OPCAO_PRODUCAO_ATUAL.isSelected())
+        if (OPCAO_PRODUCAO_ATUAL.isSelected()){
+                  
+                  data.dia_do_ano += 1;
+                  
+                  ///////////////////////////////////////////////////////////////////////////////
                     
-                {
-                  
-                    if ((data.dia_do_ano == 106) && (data.dia_da_semana == 6))//15/04/2016
-                    {
-                    data.dias_uteis = 12;
-                    }
-                    else
-                    if ((data.dia_do_ano == 107) && (data.dia_da_semana == 7))//16/04/2016
-                    {
-                    data.dias_uteis = 12.5;
-                    }
-                  
-                  String TOTAL_OL_DIA_STRING = TEXTO_OL_DO_DIA.getText();
-                  Double OL_DIA = Double.parseDouble(TOTAL_OL_DIA_STRING);
-                  
-                  //////////////////////////////////////////////////////////////
-                 
-                try{
-                BufferedReader arquivo = new BufferedReader(new FileReader("C:\\PRODUCAO\\TECNICO.txt"));
-                
-                TOTAL_DE_OL_DO_BANCO_DE_DADOS = arquivo.readLine();
-                TOTAL_DE_OL_DO_BANCO_DE_DADOS = arquivo.readLine();
-                PROJETADO_DO_BANCO_DE_DADOS = arquivo.readLine();
+                  Double OL_DIA = Double.parseDouble(TEXTO_OL_DO_DIA.getText());
                
-                arquivo.close();
-                }catch(Exception erro)
-                {
-                    JOptionPane.showMessageDialog(null,"Erro:"+erro.getMessage());
-                }
-            
-                  //////////////////////////////////////////////////////////////
+                  Double TOTAL_OL_GRAVADO = Double.parseDouble(total_de_ol);
                   
-                  Double TOTAL_OOL = Double.parseDouble( TOTAL_DE_OL_DO_BANCO_DE_DADOS);
+                  TEXTO_TOTAL_OL.setText(""+(TOTAL_OL_GRAVADO+OL_DIA));
                   
-                  TOTAL_OOL = TOTAL_OOL+OL_DIA;
+                  Double VALOR_PROJETADO_ATUAL = Double.parseDouble(TEXTO_PROJETADO.getText());
                   
-                  TEXTO_TOTAL_OL.setText(""+TOTAL_OOL);
-                  
-                  String PROJETADO_ATUAL = TEXTO_PROJETADO.getText();
-                  Double VALOR_PROJETADO_ATUAL = Double.parseDouble(PROJETADO_ATUAL);
-                  
-                  Double TOTAL_PROJETADO = Double.parseDouble( PROJETADO_DO_BANCO_DE_DADOS);//TOTAL GRAVADO NO ARQUIVO ...
+                  Double TOTAL_PROJETADO = Double.parseDouble(porcentagem_de_producao);//TOTAL GRAVADO NO ARQUIVO ...
                   
                   TEXTO_DIFERENCA_DIARIA.setText(""+(TOTAL_PROJETADO - VALOR_PROJETADO_ATUAL));
                   
                   TEXTO_FALTA.setText(""+tecnico.Metodo_Falta()+"     ou     "+Math.round(indicador.porcentagem_falta)+"%");//*****NEW*****
                   
-                  BOTAO_SALVAR.setEnabled(false);  
-                     
+                  //BOTAO_SALVAR.setEnabled(false);   
                 }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        }
         
     }//GEN-LAST:event_BOTAO_RESULTADOActionPerformed
 
