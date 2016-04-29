@@ -458,7 +458,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         
         DATA data = new DATA();
         
-        data.Data_Automatica();//CHAMA O MÉTODO QUE LER OS DIAS UTEIS PELOS ARQUIVOS TXT NOMEADOS PELOS DIAS DO ANO ...
+        DATA.Data_Automatica();//CHAMA O MÉTODO QUE LER OS DIAS UTEIS PELOS ARQUIVOS TXT NOMEADOS PELOS DIAS DO ANO ...
         
         data.Dia_Atual(data.dia);//METODO DA DATA
         
@@ -482,12 +482,6 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         indicador.porcentagem_total = (tecnico.total_ol/indicador.eletronica)*100;
         indicador.porcentagem_falta = (tecnico.total_ol/tecnico.previsto)*100;//*****NEW*****
 	tecnico.diferenca_geral = tecnico.porcentagem_dia_base - indicador.porcentagem_total;
-        
-        TEXTO_SETOR.setText(tecnico.setor);
-        TEXTO_NOME.setText(tecnico.nome); 
-        TEXTO_EM.setText(em_tecnico);
-        TEXTO_PROJETADO.setText(""+Math.round(indicador.porcentagem_total));
-        TEXTO_TOTAL_OL.setText(total_de_ol);
         
         if (tecnico.Metodo_Falta() > 0){
         TEXTO_FALTA.setText(""+tecnico.Metodo_Falta()+"     ou     "+Math.round(100-indicador.porcentagem_falta)+"%");//*****NEW***** QUANDO FALTA !!!
@@ -540,12 +534,6 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         indicador.porcentagem_falta = (tecnico.total_ol/tecnico.previsto)*100;//*****NEW*****
 	tecnico.diferenca_geral = tecnico.porcentagem_dia_base - indicador.porcentagem_total;
         
-        TEXTO_SETOR.setText(tecnico.setor);
-        TEXTO_NOME.setText(tecnico.nome); 
-        TEXTO_EM.setText(em_tecnico);
-        TEXTO_PROJETADO.setText(""+Math.round(indicador.porcentagem_total));
-        TEXTO_TOTAL_OL.setText(total_de_ol);
-        
         if (tecnico.Metodo_Falta() > 0){
         TEXTO_FALTA.setText(""+tecnico.Metodo_Falta()+"     ou     "+Math.round(100-indicador.porcentagem_falta)+"%");//*****NEW***** QUANDO FALTA !!!
         }
@@ -597,12 +585,6 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         indicador.porcentagem_falta = (tecnico.total_ol/tecnico.previsto)*100;//*****NEW*****
 	tecnico.diferenca_geral = tecnico.porcentagem_dia_base - indicador.porcentagem_total;
         
-        TEXTO_SETOR.setText(tecnico.setor);
-        TEXTO_NOME.setText(tecnico.nome); 
-        TEXTO_EM.setText(em_tecnico);
-        TEXTO_PROJETADO.setText(""+Math.round(indicador.porcentagem_total));
-        TEXTO_TOTAL_OL.setText(total_de_ol);
-        
         if (tecnico.Metodo_Falta() > 0){
         TEXTO_FALTA.setText(""+tecnico.Metodo_Falta()+"     ou     "+Math.round(100-indicador.porcentagem_falta)+"%");//*****NEW***** QUANDO FALTA !!!
         }
@@ -643,17 +625,21 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         
         /////////////////////////////////////////////////////////////
         
-        indicador.porcentagem_dias_uteis = (data.dias_uteis/data.dias_uteis_totais)*100;//*****NEW*****
-        
         Double dias_rest = (data.dias_uteis_totais-data.dias_uteis);
         
+        indicador.porcentagem_dias_uteis = (data.dias_uteis/data.dias_uteis_totais)*100;//*****NEW*****
         indicador.porcentagem_dias_uteis_restantes = (dias_rest/data.dias_uteis_totais)*100;//*****NEW*****
         
         String DiasUteis = Double.toString(data.dias_uteis);
-        TEXTO_DIAS_UTEIS.setText(DiasUteis+"     ou     "+Math.round(indicador.porcentagem_dias_uteis)+"%");
-        
         String Dias_Uteis_restantes = Double.toString(data.dias_uteis_totais-data.dias_uteis);
+        
         TEXTO_DIAS_UTEIS_RESTANTES.setText(Dias_Uteis_restantes+"     ou     "+Math.round(indicador.porcentagem_dias_uteis_restantes)+"%");
+        TEXTO_DIAS_UTEIS.setText(DiasUteis+"     ou     "+Math.round(indicador.porcentagem_dias_uteis)+"%");
+        TEXTO_SETOR.setText(tecnico.setor);
+        TEXTO_NOME.setText(tecnico.nome); 
+        TEXTO_EM.setText(em_tecnico);
+        TEXTO_PROJETADO.setText(""+Math.round(indicador.porcentagem_total));
+        TEXTO_TOTAL_OL.setText(total_de_ol);
         
         /////////////////////////CODIGO ANTIGO/////////////////////
         
