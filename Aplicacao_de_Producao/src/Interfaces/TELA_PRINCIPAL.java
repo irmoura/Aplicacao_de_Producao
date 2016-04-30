@@ -29,26 +29,35 @@ import java.util.Random;
  */
 public class TELA_PRINCIPAL extends javax.swing.JFrame {
     
+    public DATA data;
+    public MENU_SOBRE menu_sobre;
+    public MENU_PRODUCAO menu_producao;
+    public TELA_DE_CARREGAMENTO TC;
+    public Timer timer;
+    
     public static String segundos_String = "";
     public static int minutos_int = 0;
     public static int horas_int = 0;
     public static String segundos = "";
     public static String minutos = "";
     public static String horas = "";
-    public static int HORIZONTAL, VERTICAL;
+    public static int HORIZONTAL, VERTICAL,contador;
     
     /**
      * Creates new form Principal
      */
     public TELA_PRINCIPAL() { 
         
+        data = new DATA();
+        menu_sobre = new MENU_SOBRE();
+        menu_producao = new MENU_PRODUCAO();
+        TC = new TELA_DE_CARREGAMENTO();
         
         initComponents();
         
         Calendar calendario = Calendar.getInstance();
         int Mes = calendario.get(Calendar.MONTH);
         
-        DATA data = new DATA();
         Date dataSistema = new Date();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         
@@ -173,7 +182,6 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         }
         else
         {
-            TELA_DE_CARREGAMENTO TC = new TELA_DE_CARREGAMENTO();
         
             TC.setVisible(true);
             
@@ -378,21 +386,16 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
     
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        MENU_SOBRE obj = new MENU_SOBRE();
-        JanelaInternaPrincipal.add(obj);
-        obj.setVisible(true);
+        JanelaInternaPrincipal.add(menu_sobre);
+        menu_sobre.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void MENU_PRODUCAOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_PRODUCAOActionPerformed
         // TODO add your handling code here:
-        DATA data = new DATA();
-        MENU_PRODUCAO obj = new MENU_PRODUCAO();
-        JanelaInternaPrincipal.add(obj);
-        obj.setVisible(true);
-        obj.setTitle("Relatório de Acompanhamento de Metas Diário - "+data.MES_VALIDO_STR+" "+data.ANO_VALIDO);
+        JanelaInternaPrincipal.add(menu_producao);
+        menu_producao.setVisible(true);
+        menu_producao.setTitle("Relatório de Acompanhamento de Metas Diário - "+data.MES_VALIDO_STR+" "+data.ANO_VALIDO);
     }//GEN-LAST:event_MENU_PRODUCAOActionPerformed
-    
-    int contador = 0;
     
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
@@ -735,8 +738,6 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
             }
         });
     }
-    
-    public Timer timer;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CRONOMETRO;
