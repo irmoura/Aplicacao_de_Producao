@@ -14,7 +14,9 @@ import java.awt.event.*;
  * @author IBS F25
  */
 public class TELA_DE_CARREGAMENTO extends javax.swing.JFrame {
-
+    
+    public Timer timer;
+    
     /**
      * Creates new form TELA_DE_CARREGAMENTO
      */
@@ -132,8 +134,6 @@ public class TELA_DE_CARREGAMENTO extends javax.swing.JFrame {
             }
         });
     }
-    
-    public Timer timer;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JProgressBar BARRA_DE_PROGRESSO;
