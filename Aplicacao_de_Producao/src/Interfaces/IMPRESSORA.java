@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  *
  * @author Ismael Ribeiro
  */
-public class IMPRESSORAS {
+public class IMPRESSORA {
 double dia;
 String setor = "Impressoras";
 

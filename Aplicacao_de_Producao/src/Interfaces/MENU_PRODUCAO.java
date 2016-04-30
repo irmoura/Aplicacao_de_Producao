@@ -35,7 +35,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
     public GARANTIA garantia;
     public DESKTOP desktop;
     public RECARGA recarga;
-    public IMPRESSORAS impressoras;
+    public IMPRESSORA impressora;
     public TABLET tablet;
     public LAUDO laudo;
     public RECEPCAO recepcao;
@@ -60,7 +60,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         garantia = new GARANTIA();
         desktop = new DESKTOP();
         recarga = new RECARGA();
-        impressoras = new IMPRESSORAS();
+        impressora = new IMPRESSORA();
         tablet = new TABLET();
         laudo = new LAUDO();
         recepcao = new RECEPCAO();
@@ -471,7 +471,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         garantia.Meta();
         desktop.Meta();
         recarga.Meta();
-        impressoras.Meta();
+        impressora.Meta();
         tablet.Meta();
         laudo.Meta();
         recepcao.Meta();
@@ -1066,6 +1066,18 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         {
               gravarArq.println("0000");
               gravarArq.println("0");
+              gravarArq.println("0");
+              gravarArq.println("DEFALT");
+              gravarArq.println("ELETRONICA");
+              gravarArq.println("0");
+/*
+EM
+TOTAL DE OL
+PORCENTAGEM DE PRODUCAO TOTAL
+NOME
+SETOR
+PORCENTAGEM DO DIA BASE
+*/
         }
         try { 
             TECNICO.close();
