@@ -9,9 +9,7 @@ package Interfaces;
  *
  * @author Ismael Ribeiro
  */
-public class TECNICO {
-
-INDICADOR indicador = new INDICADOR();    
+public class TECNICO {  
 
 String nome;
 String setor;

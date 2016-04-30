@@ -14,6 +14,7 @@ import java.awt.Dimension;
 public class MENU_SOBRE extends javax.swing.JInternalFrame {
     
     public DATA data;
+    public Dimension dimensao;
     
     /**
      * Creates new form MENU_SOBRE
@@ -22,6 +23,7 @@ public class MENU_SOBRE extends javax.swing.JInternalFrame {
         initComponents();
         
         data = new DATA();
+        dimensao = new Dimension();
         
         AREA_DE_TEXTO.setText("Aplicativo desenvolvido em java com o objetivo \n" +
                               "similar ao da planilha de acompanhamento.\n" +
@@ -66,7 +68,6 @@ public class MENU_SOBRE extends javax.swing.JInternalFrame {
         AREA_DE_TEXTO.setEditable(false);
         AREA_DE_TEXTO.setColumns(20);
         AREA_DE_TEXTO.setRows(5);
-        AREA_DE_TEXTO.setText("Aplicativo desenvolvido em java com o objetivo \nsimilar ao da planilha de acompanhamento.\n\n*Válido para Dezembro de 2015.\n\nDesenvolvedor: Ismael Ribeiro Moura.");
         jScrollPane1.setViewportView(AREA_DE_TEXTO);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -91,8 +92,8 @@ public class MENU_SOBRE extends javax.swing.JInternalFrame {
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
         // TODO add your handling code here:
-        Dimension d = this.getDesktopPane().getSize();
-        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
+        dimensao = this.getDesktopPane().getSize();
+        this.setLocation((dimensao.width - this.getSize().width) / 2, (dimensao.height - this.getSize().height) / 2);
     }//GEN-LAST:event_formInternalFrameOpened
 
 

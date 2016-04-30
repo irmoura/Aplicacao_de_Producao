@@ -82,70 +82,8 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
          *PODE SER DESATIVADO
          *SE FOR DESATIVADO O MES VALIDO DA CLASSE DATA DEVE SER DEFINIDO MANUALMENTE.
          */
-        switch (data.mes) {
-            case 0:
-                data.MES_VALIDO = 1;
-                data.MES_VALIDO_STR = "Janeiro";
-                data.MES_VALIDO_ABREVIADO = "JAN";
-                break;
-            case 1:
-                data.MES_VALIDO = 2;
-                data.MES_VALIDO_STR = "Fevereiro";
-                data.MES_VALIDO_ABREVIADO = "FEV";
-                break;
-            case 2:
-                data.MES_VALIDO = 3;
-                data.MES_VALIDO_STR = "Março";
-                data.MES_VALIDO_ABREVIADO = "MAR";
-                break;
-            case 3:
-                data.MES_VALIDO = 4;
-                data.MES_VALIDO_STR = "Abril";
-                data.MES_VALIDO_ABREVIADO = "ABR";
-                break;
-            case 4:
-                data.MES_VALIDO = 5;
-                data.MES_VALIDO_STR = "Maio";
-                data.MES_VALIDO_ABREVIADO = "MAI";
-                break;
-            case 5:
-                data.MES_VALIDO = 6;
-                data.MES_VALIDO_STR = "Junho";
-                data.MES_VALIDO_ABREVIADO = "JUN";
-                break;
-            case 6:
-                data.MES_VALIDO = 7;
-                data.MES_VALIDO_STR = "Julho";
-                data.MES_VALIDO_ABREVIADO = "JUL";
-                break;
-            case 7:
-                data.MES_VALIDO = 8;
-                data.MES_VALIDO_STR = "Agosto";
-                data.MES_VALIDO_ABREVIADO = "AGO";
-                break;
-            case 8:
-                data.MES_VALIDO = 9;
-                data.MES_VALIDO_STR = "Setembro";
-                data.MES_VALIDO_ABREVIADO = "SET";
-                break;
-            case 9:
-                data.MES_VALIDO = 10;
-                data.MES_VALIDO_STR = "Outubro";
-                data.MES_VALIDO_ABREVIADO = "OUT";
-                break;
-            case 10:
-                data.MES_VALIDO = 11;
-                data.MES_VALIDO_STR = "Novembro";
-                data.MES_VALIDO_ABREVIADO = "NOV";
-                break;
-            case 11:
-                data.MES_VALIDO = 12;
-                data.MES_VALIDO_STR = "Dezembro";
-                data.MES_VALIDO_ABREVIADO = "DEZ";
-                break;
-            default:
-                break;
-        }
+        
+        data.Verifica_Mes();
         
 /********************************************************************************************************************************************************/
         
