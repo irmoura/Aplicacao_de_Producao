@@ -15,9 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class DATA {
 
-public static String dia_util_str;    
-public static String dias_uteis_totais_str;
-public static String dia_base_str;
+public static String dia_util_str, dias_uteis_totais_str, dia_base_str;
 
 Calendar DIA_ATUAL = Calendar.getInstance();
 

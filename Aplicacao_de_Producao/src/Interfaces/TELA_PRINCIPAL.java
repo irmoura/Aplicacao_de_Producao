@@ -71,9 +71,6 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         
         initComponents();
         
-        Calendar calendario = Calendar.getInstance();
-        int Mes = calendario.get(Calendar.MONTH);
-        
         Date dataSistema = new Date();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         
@@ -85,7 +82,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
          *PODE SER DESATIVADO
          *SE FOR DESATIVADO O MES VALIDO DA CLASSE DATA DEVE SER DEFINIDO MANUALMENTE.
          */
-        switch (Mes) {
+        switch (data.mes) {
             case 0:
                 data.MES_VALIDO = 1;
                 data.MES_VALIDO_STR = "Janeiro";
