@@ -107,21 +107,22 @@ public class MENU_LOCALIZAR extends javax.swing.JInternalFrame {
 
     private void BOTAO_LOCALIZARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_LOCALIZARActionPerformed
         // TODO add your handling code here:
+        
         String OS = TEXTO_OS.getText();
-        OS = OS+".txt";
+        OS = OS.replace("/", "");
+        OS += ".txt";
         
         File dir = new File("C:\\PRODUCAO\\INSPECAO");
-        
         File arq = new File(dir,OS);
         
         try {
+            
             FileReader fileReader = new FileReader(arq);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);//fileReader
             
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            
-             String linha = bufferedReader.readLine();
+             String conforme = bufferedReader.readLine();
              
-             JOptionPane.showMessageDialog(null,"A OS: "+TEXTO_OS.getText()+" ESTÁ NO CONFORME: "+linha);
+             JOptionPane.showMessageDialog(null,"A OS: "+TEXTO_OS.getText()+" ESTÁ NO CONFORME: "+conforme);
             
         } catch (FileNotFoundException ex) {
             JOptionPane.showMessageDialog(null,"Ordem de serviço não encontrada ...");
