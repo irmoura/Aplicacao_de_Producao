@@ -12,14 +12,16 @@ import java.awt.Dimension;
  * @author Ismael Ribeiro
  */
 public class MENU_SOBRE extends javax.swing.JInternalFrame {
-
+    
+    public DATA data;
+    
     /**
      * Creates new form MENU_SOBRE
      */
     public MENU_SOBRE() {
         initComponents();
         
-        DATA data = new DATA();
+        data = new DATA();
         
         AREA_DE_TEXTO.setText("Aplicativo desenvolvido em java com o objetivo \n" +
                               "similar ao da planilha de acompanhamento.\n" +

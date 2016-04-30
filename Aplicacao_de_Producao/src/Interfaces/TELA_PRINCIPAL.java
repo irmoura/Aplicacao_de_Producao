@@ -34,6 +34,14 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
     public MENU_PRODUCAO menu_producao;
     public TELA_DE_CARREGAMENTO TC;
     public Timer timer;
+    public MENU_F4 menu_f4;
+    public TELA_DO_GRAFICO tela_do_grafico;
+    public LOJA loja;
+    public MENU_LOCALIZAR_COLABORADOR menu_localizar_colaborador;
+    public MENU_INSPECAO menu_inspecao;
+    public MENU_LOCALIZAR menu_localizar;
+    public MENU_ORDEM_DE_SERVICO menu_ordem_de_servico;
+    public MENU_PONTO menu_ponto;
     
     public static String segundos_String = "";
     public static int minutos_int = 0;
@@ -52,6 +60,14 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         menu_sobre = new MENU_SOBRE();
         menu_producao = new MENU_PRODUCAO();
         TC = new TELA_DE_CARREGAMENTO();
+        menu_f4 = new MENU_F4();
+        tela_do_grafico = new TELA_DO_GRAFICO();
+        loja = new LOJA();
+        menu_localizar_colaborador = new MENU_LOCALIZAR_COLABORADOR();
+        menu_inspecao = new MENU_INSPECAO();
+        menu_localizar = new MENU_LOCALIZAR();
+        menu_ordem_de_servico = new MENU_ORDEM_DE_SERVICO();
+        menu_ponto = new MENU_PONTO();
         
         initComponents();
         
@@ -72,63 +88,63 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         switch (Mes) {
             case 0:
                 data.MES_VALIDO = 1;
-                Interfaces.DATA.MES_VALIDO_STR = "Janeiro";
-                Interfaces.DATA.MES_VALIDO_ABREVIADO = "JAN";
+                data.MES_VALIDO_STR = "Janeiro";
+                data.MES_VALIDO_ABREVIADO = "JAN";
                 break;
             case 1:
                 data.MES_VALIDO = 2;
-                Interfaces.DATA.MES_VALIDO_STR = "Fevereiro";
-                Interfaces.DATA.MES_VALIDO_ABREVIADO = "FEV";
+                data.MES_VALIDO_STR = "Fevereiro";
+                data.MES_VALIDO_ABREVIADO = "FEV";
                 break;
             case 2:
                 data.MES_VALIDO = 3;
-                Interfaces.DATA.MES_VALIDO_STR = "Março";
-                Interfaces.DATA.MES_VALIDO_ABREVIADO = "MAR";
+                data.MES_VALIDO_STR = "Março";
+                data.MES_VALIDO_ABREVIADO = "MAR";
                 break;
             case 3:
                 data.MES_VALIDO = 4;
-                Interfaces.DATA.MES_VALIDO_STR = "Abril";
-                Interfaces.DATA.MES_VALIDO_ABREVIADO = "ABR";
+                data.MES_VALIDO_STR = "Abril";
+                data.MES_VALIDO_ABREVIADO = "ABR";
                 break;
             case 4:
                 data.MES_VALIDO = 5;
-                Interfaces.DATA.MES_VALIDO_STR = "Maio";
-                Interfaces.DATA.MES_VALIDO_ABREVIADO = "MAI";
+                data.MES_VALIDO_STR = "Maio";
+                data.MES_VALIDO_ABREVIADO = "MAI";
                 break;
             case 5:
                 data.MES_VALIDO = 6;
-                Interfaces.DATA.MES_VALIDO_STR = "Junho";
-                Interfaces.DATA.MES_VALIDO_ABREVIADO = "JUN";
+                data.MES_VALIDO_STR = "Junho";
+                data.MES_VALIDO_ABREVIADO = "JUN";
                 break;
             case 6:
                 data.MES_VALIDO = 7;
-                Interfaces.DATA.MES_VALIDO_STR = "Julho";
-                Interfaces.DATA.MES_VALIDO_ABREVIADO = "JUL";
+                data.MES_VALIDO_STR = "Julho";
+                data.MES_VALIDO_ABREVIADO = "JUL";
                 break;
             case 7:
                 data.MES_VALIDO = 8;
-                Interfaces.DATA.MES_VALIDO_STR = "Agosto";
-                Interfaces.DATA.MES_VALIDO_ABREVIADO = "AGO";
+                data.MES_VALIDO_STR = "Agosto";
+                data.MES_VALIDO_ABREVIADO = "AGO";
                 break;
             case 8:
                 data.MES_VALIDO = 9;
-                Interfaces.DATA.MES_VALIDO_STR = "Setembro";
-                Interfaces.DATA.MES_VALIDO_ABREVIADO = "SET";
+                data.MES_VALIDO_STR = "Setembro";
+                data.MES_VALIDO_ABREVIADO = "SET";
                 break;
             case 9:
                 data.MES_VALIDO = 10;
-                Interfaces.DATA.MES_VALIDO_STR = "Outubro";
-                Interfaces.DATA.MES_VALIDO_ABREVIADO = "OUT";
+                data.MES_VALIDO_STR = "Outubro";
+                data.MES_VALIDO_ABREVIADO = "OUT";
                 break;
             case 10:
                 data.MES_VALIDO = 11;
-                Interfaces.DATA.MES_VALIDO_STR = "Novembro";
-                Interfaces.DATA.MES_VALIDO_ABREVIADO = "NOV";
+                data.MES_VALIDO_STR = "Novembro";
+                data.MES_VALIDO_ABREVIADO = "NOV";
                 break;
             case 11:
                 data.MES_VALIDO = 12;
-                Interfaces.DATA.MES_VALIDO_STR = "Dezembro";
-                Interfaces.DATA.MES_VALIDO_ABREVIADO = "DEZ";
+                data.MES_VALIDO_STR = "Dezembro";
+                data.MES_VALIDO_ABREVIADO = "DEZ";
                 break;
             default:
                 break;
@@ -535,6 +551,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
                 
             }
         });
+        
         timer.start();
         //
         
@@ -546,25 +563,22 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
                 public boolean dispatchKeyEvent(KeyEvent event) {
                     if(event.getID() == KeyEvent.KEY_RELEASED 
                        && event.getKeyCode() == KeyEvent.VK_F2){
-                        MENU_F4 obj = new MENU_F4();
-                        JanelaInternaPrincipal.add(obj);
-                        obj.setVisible(true);
+                        JanelaInternaPrincipal.add(menu_f4);
+                        menu_f4.setVisible(true);
                            return true;
                      }
                     else
                         if(event.getID() == KeyEvent.KEY_RELEASED 
                        && event.getKeyCode() == KeyEvent.VK_F1){
-                        MENU_SOBRE obj = new MENU_SOBRE();
-                        JanelaInternaPrincipal.add(obj);
-                        obj.setVisible(true);
+                        JanelaInternaPrincipal.add(menu_sobre);
+                        menu_sobre.setVisible(true);
                            return true;
                      }
                     else
                         if(event.getID() == KeyEvent.KEY_RELEASED 
                        && event.getKeyCode() == KeyEvent.VK_F3){
-                        TELA_DO_GRAFICO obj = new TELA_DO_GRAFICO();
-                        JanelaInternaPrincipal.add(obj);
-                        obj.setVisible(true);
+                        JanelaInternaPrincipal.add(tela_do_grafico);
+                        tela_do_grafico.setVisible(true);
                            return true;
                      }
                      return false;
@@ -575,7 +589,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
           
         /////////////////////
 
-        Timer timer = new Timer(1000, new hora());
+        timer = new Timer(1000, new hora());
         timer.start();
         
         java.io.File DIRETORIO_PRINCIPAL = new java.io.File("C:\\PRODUCAO");
@@ -642,45 +656,38 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
             Logger.getLogger(TELA_PRINCIPAL.class.getName()).log(Level.SEVERE, null, ex);
         }*/
         
-        LOJA loja = new LOJA();
-        
         setTitle(loja.loja);//DEFINE O TITULO DA JANELA PRINCIPAL ATRAVES DA CLASSE LOJA
         
     }//GEN-LAST:event_formWindowOpened
 
     private void MENU_LOCALIZAR_COLABORADORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_LOCALIZAR_COLABORADORActionPerformed
         // TODO add your handling code here:
-        MENU_LOCALIZAR_COLABORADOR obj = new MENU_LOCALIZAR_COLABORADOR();
-        JanelaInternaPrincipal.add(obj);
-        obj.setVisible(true);
+        JanelaInternaPrincipal.add(menu_localizar_colaborador);
+        menu_localizar_colaborador.setVisible(true);
     }//GEN-LAST:event_MENU_LOCALIZAR_COLABORADORActionPerformed
 
     private void MENU_CADASTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_CADASTRARActionPerformed
         // TODO add your handling code here:
-        MENU_INSPECAO obj = new MENU_INSPECAO();
-        JanelaInternaPrincipal.add(obj);
-        obj.setVisible(true);
+        JanelaInternaPrincipal.add(menu_inspecao);
+        menu_inspecao.setVisible(true);
     }//GEN-LAST:event_MENU_CADASTRARActionPerformed
 
     private void MENU_LOCALIZARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_LOCALIZARActionPerformed
         // TODO add your handling code here:
-        MENU_LOCALIZAR obj = new MENU_LOCALIZAR();
-        JanelaInternaPrincipal.add(obj);
-        obj.setVisible(true);
+        JanelaInternaPrincipal.add(menu_localizar);
+        menu_localizar.setVisible(true);
     }//GEN-LAST:event_MENU_LOCALIZARActionPerformed
 
     private void MENU_ORDEM_DE_SERVICOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_ORDEM_DE_SERVICOActionPerformed
         // TODO add your handling code here:
-        MENU_ORDEM_DE_SERVICO obj = new MENU_ORDEM_DE_SERVICO();
-        JanelaInternaPrincipal.add(obj);
-        obj.setVisible(true);
+        JanelaInternaPrincipal.add(menu_ordem_de_servico);
+        menu_ordem_de_servico.setVisible(true);
     }//GEN-LAST:event_MENU_ORDEM_DE_SERVICOActionPerformed
 
     private void MENU_PONTOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_PONTOActionPerformed
         // TODO add your handling code here:
-        MENU_PONTO obj = new MENU_PONTO();
-        JanelaInternaPrincipal.add(obj);
-        obj.setVisible(true);
+        JanelaInternaPrincipal.add(menu_ponto);
+        menu_ponto.setVisible(true);
     }//GEN-LAST:event_MENU_PONTOActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
