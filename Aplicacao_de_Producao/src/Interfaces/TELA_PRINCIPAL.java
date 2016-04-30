@@ -737,7 +737,6 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
     }
     
     public Timer timer;
-    public Timer timer2;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CRONOMETRO;

@@ -53,11 +53,9 @@ public static void Feriado(){
     JOptionPane.showMessageDialog(null,"Hoje é feriado !!! ","Feriado",JOptionPane.INFORMATION_MESSAGE);
 }
 
-public static void Data_Automatica(){
+public static void Data_Automatica(String dia_do_ano){
     
-    Calendar DIA_ATUAL = Calendar.getInstance();
-    
-    String dia_do_ano_str = ""+DIA_ATUAL.get(Calendar.DAY_OF_YEAR);
+    String dia_do_ano_str = dia_do_ano;
     
     dia_do_ano_str = dia_do_ano_str+".txt";
     

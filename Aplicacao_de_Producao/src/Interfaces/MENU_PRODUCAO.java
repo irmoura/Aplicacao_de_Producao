@@ -21,12 +21,26 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 import java.text.*;
+import java.util.Calendar;
 
 /**
  *
  * @author Ismael Ribeiro
  */
 public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
+    
+    public ELETRONICA eletronica;
+    public NOTEBOOK notebook;
+    public DATA data;
+    public GARANTIA garantia;
+    public DESKTOP desktop;
+    public RECARGA recarga;
+    public IMPRESSORAS impressoras;
+    public TABLET tablet;
+    public LAUDO laudo;
+    public RECEPCAO recepcao;
+    public INDICADOR indicador;
+    public TECNICO tecnico;
     
     public static String em;
     public static String total_de_ol;
@@ -39,13 +53,26 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
      * Creates new form 
      */
     public MENU_PRODUCAO() {
-        DATA data = new DATA();
+        
+        eletronica = new ELETRONICA();
+        notebook = new NOTEBOOK();
+        data = new DATA();
+        garantia = new GARANTIA();
+        desktop = new DESKTOP();
+        recarga = new RECARGA();
+        impressoras = new IMPRESSORAS();
+        tablet = new TABLET();
+        laudo = new LAUDO();
+        recepcao = new RECEPCAO();
+        indicador = new INDICADOR();
+        tecnico = new TECNICO();
+        
         initComponents();
         //TEXTO_EM.setDocument(new LIMITE_DE_DIGITOS_EM(4));//Limite de um EM ex: 2228//---------------
         //TEXTO_TOTAL_OL.setDocument(new LIMITE_DE_DIGITOS_EM(3));//COM ESSA LINHA DEU ERRO NA CONTAGEM ... :/
         //TEXTO_OL_DO_DIA.setDocument(new LIMITE_DE_DIGITOS_EM(3));//-----------------
         
-        data.Data_Automatica();//DEFINE O DIA BASE ATRAVES DO ARQUIVO TXT
+        data.Data_Automatica(""+data.dia_do_ano);//DEFINE O DIA BASE ATRAVES DO ARQUIVO TXT
         data.Dia_Atual(data.dia);//DEFINE O DIA BASE ATRAVES DO ARQUIVO TXT
         
         BOTAO_SALVAR.setToolTipText("Salvar");//MOSTRA UM TEXTO AO PASSAR MOUSE EM CIMA
@@ -426,25 +453,18 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_TEXTO_PROJETADOActionPerformed
-
+    
     private void BOTAO_RESULTADOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_RESULTADOActionPerformed
         // TODO add your handling code here:
+        
+        Calendar DIA_ATUAL = Calendar.getInstance();
+        String dia_do_ano = ""+DIA_ATUAL.get(Calendar.DAY_OF_YEAR);
         
         Arquivo();//CHAMA O MÉTODO DA LEITURA DO ARQUIVO TXT
         
         BOTAO_SALVAR.setEnabled(false);//COM A OPCAO "ATUAL" DESMARCADA O BOTAO SALVAR FICA VISIVEL !
         FALTA_.setText("FALTA");
         TEXTO_FALTA.setBackground(Color.WHITE);
-        
-        ELETRONICA eletronica = new ELETRONICA();
-        NOTEBOOK notebook = new NOTEBOOK();
-        GARANTIA garantia = new GARANTIA();
-        DESKTOP desktop = new DESKTOP();
-        RECARGA recarga = new RECARGA();
-        IMPRESSORAS impressoras = new IMPRESSORAS();
-        TABLET tablet = new TABLET();
-        LAUDO laudo = new LAUDO();
-        RECEPCAO recepcao = new RECEPCAO();
         
         eletronica.Meta();//CHAMA O MÉTODO QUE DEFINE A QUANTIDADE QUE DEVE SER FEITA DIARIAMENTE DE ACORDO COM O VALOR DO ARQUIVO LIDO
         notebook.Meta();
@@ -456,15 +476,9 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         laudo.Meta();
         recepcao.Meta();
         
-        DATA data = new DATA();
-        
-        DATA.Data_Automatica();//CHAMA O MÉTODO QUE LER OS DIAS UTEIS PELOS ARQUIVOS TXT NOMEADOS PELOS DIAS DO ANO ...
+        DATA.Data_Automatica(dia_do_ano);//CHAMA O MÉTODO QUE LER OS DIAS UTEIS PELOS ARQUIVOS TXT NOMEADOS PELOS DIAS DO ANO ...
         
         data.Dia_Atual(data.dia);//METODO DA DATA
-        
-        INDICADOR indicador = new INDICADOR();
-        
-        TECNICO tecnico = new TECNICO();
         
         tecnico.em = Integer.parseInt(em);
         String em_tecnico = Integer.toString(tecnico.em);
@@ -751,76 +765,6 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         int Q_A_OL = 0;
         int N_Q_OL = 0;
         
-        TECNICO ismael = new TECNICO();
-        TECNICO glauber = new TECNICO();
-        TECNICO paulo = new TECNICO();
-        TECNICO bruno = new TECNICO();
-        TECNICO julio = new TECNICO();
-        TECNICO jociano = new TECNICO();
-        TECNICO pedro = new TECNICO();
-        TECNICO antonio = new TECNICO();
-        TECNICO benedito = new TECNICO();
-        TECNICO emmanuel = new TECNICO();
-        TECNICO polibio = new TECNICO();
-        TECNICO robson = new TECNICO();
-        TECNICO lucas = new TECNICO();
-        TECNICO alexsandro = new TECNICO();
-        TECNICO rodrigo = new TECNICO();
-        TECNICO alexviana = new TECNICO();
-        TECNICO henriqueestevao = new TECNICO();
-        TECNICO robertobarbosa = new TECNICO();
-        TECNICO alandouglas = new TECNICO();
-        TECNICO clovissantos = new TECNICO();
-        TECNICO joselima = new TECNICO();
-        
-        ATENDENTE carol = new ATENDENTE();
-        
-        ismael.em = 2228;
-        String em_ismael = Integer.toString(ismael.em);
-        glauber.em = 2378;
-        String em_glauber = Integer.toString(glauber.em);
-        paulo.em = 1152;
-        String em_paulo = Integer.toString(paulo.em);
-        bruno.em = 2940;
-        String em_bruno = Integer.toString(bruno.em);
-        julio.em = 1854;
-        String em_julio = Integer.toString(julio.em);
-        jociano.em = 983;
-        String em_jociano = Integer.toString(jociano.em);
-        antonio.em = 2732;
-        String em_antonio = Integer.toString(antonio.em);
-        benedito.em = 2127;
-        String em_benedito = Integer.toString(benedito.em);
-        emmanuel.em = 680;
-        String em_emmanuel = Integer.toString(emmanuel.em);
-        polibio.em = 1915;
-        String em_polibio = Integer.toString(polibio.em);
-        robson.em = 2283;
-        String em_robson = Integer.toString(robson.em);
-        lucas.em = 2742;
-        String em_lucas = Integer.toString(lucas.em);
-        alexsandro.em = 2964;
-        String em_alexsandro = Integer.toString(alexsandro.em);
-        rodrigo.em = 2942;
-        String em_rodrigo = Integer.toString(rodrigo.em);
-        alexviana.em = 2511;
-        String em_alexviana = Integer.toString(alexviana.em);
-        henriqueestevao.em = 2924;
-        String em_henriqueestevao = Integer.toString(henriqueestevao.em);
-        robertobarbosa.em = 27;
-        String em_robertobarbosa = Integer.toString(robertobarbosa.em);
-        pedro.em = 2974;
-        String em_pedro = Integer.toString(pedro.em);
-        alandouglas.em = 917;
-        String em_alandouglas = Integer.toString(alandouglas.em);
-        clovissantos.em = 2805;
-        String em_clovissantos = Integer.toString(clovissantos.em);
-        joselima.em = 1760;
-        String em_joselima = Integer.toString(joselima.em);
-        
-        carol.em = 2764;
-        String em_carol = Integer.toString(carol.em);
-        
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         File DIRETORIO = new File("C:\\PRODUCAO");//PASTA QUE SERÁ ABERTA
         File ARQUIVO_OL = new File(DIRETORIO, "TECNICO.txt");//ARQUIVO QUE SERÁ ABERTO
@@ -876,29 +820,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
                  {
                     
                     if (
-            Em.equals(em_ismael) ||
-            Em.equals(em_carol) ||
-            Em.equals(em_glauber) ||
-            Em.equals(em_paulo) ||
-            Em.equals(em_bruno) ||
-            Em.equals(em_julio) ||
-            Em.equals(em_jociano) ||
-            Em.equals(em_paulo) ||
-            Em.equals(em_antonio) ||
-            Em.equals(em_benedito) ||
-            Em.equals(em_emmanuel) ||
-            Em.equals(em_polibio) ||
-            Em.equals(em_robson) ||
-            Em.equals(em_lucas) ||
-            Em.equals(em_alexsandro) ||
-            Em.equals(em_rodrigo) ||
-            Em.equals(em_alexviana) ||
-            Em.equals(em_henriqueestevao) ||
-            Em.equals(em_robertobarbosa) ||
-            Em.equals(em_pedro) ||
-            Em.equals(em_alandouglas) ||
-            Em.equals(em_clovissantos) ||
-            Em.equals(em_joselima)
+                        1 == 1//DADOS PRIVADOS REMOVIDOS
            )
                 
         {
@@ -942,29 +864,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         {
         
         if (
-            Em.equals(em_ismael) ||
-            Em.equals(em_carol) ||
-            Em.equals(em_glauber) ||
-            Em.equals(em_paulo) ||
-            Em.equals(em_bruno) ||
-            Em.equals(em_julio) ||
-            Em.equals(em_jociano) ||
-            Em.equals(em_paulo) ||
-            Em.equals(em_antonio) ||
-            Em.equals(em_benedito) ||
-            Em.equals(em_emmanuel) ||
-            Em.equals(em_polibio) ||
-            Em.equals(em_robson) ||
-            Em.equals(em_lucas) ||
-            Em.equals(em_alexsandro) ||
-            Em.equals(em_rodrigo) ||
-            Em.equals(em_alexviana) ||
-            Em.equals(em_henriqueestevao) ||
-            Em.equals(em_robertobarbosa) ||
-            Em.equals(em_pedro) ||
-            Em.equals(em_alandouglas) ||
-            Em.equals(em_clovissantos) ||
-            Em.equals(em_joselima)
+            1 == 1//DADOS PRIVADOS REMOVIDOS
            )
                 
         {
@@ -1004,29 +904,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         else
         
         if (
-            Em.equals(em_ismael) ||
-            Em.equals(em_carol) ||
-            Em.equals(em_glauber) ||
-            Em.equals(em_paulo) ||
-            Em.equals(em_bruno) ||
-            Em.equals(em_julio) ||
-            Em.equals(em_jociano) ||
-            Em.equals(em_paulo) ||
-            Em.equals(em_antonio) ||
-            Em.equals(em_benedito) ||
-            Em.equals(em_emmanuel) ||
-            Em.equals(em_polibio) ||
-            Em.equals(em_robson) ||
-            Em.equals(em_lucas) ||
-            Em.equals(em_alexsandro) ||
-            Em.equals(em_rodrigo) ||
-            Em.equals(em_alexviana) ||
-            Em.equals(em_henriqueestevao) ||
-            Em.equals(em_robertobarbosa) ||
-            Em.equals(em_pedro) ||
-            Em.equals(em_alandouglas) ||
-            Em.equals(em_clovissantos) ||
-            Em.equals(em_joselima)
+            1 == 1//DADOS PRIVADOS REMOVIDOS
             )
                 
         {
@@ -1222,10 +1100,9 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         Dimension d = this.getDesktopPane().getSize();
         this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
         
-        DATA data = new DATA();
-        
         COMBO_DIA.setEnabled(false);
         COMBO_DIA.setSelectedIndex(data.dia-1);//DIA 28 DEU ERRO AO ESTAR ATIVADO NO CÓDIGO ... O MOTIVO FOI NÃO HAVER TODOS OS DIAS DE 0 A 31 ...
+        
     }//GEN-LAST:event_formInternalFrameOpened
 
     private void BOTAO_RESULTADOKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BOTAO_RESULTADOKeyPressed
