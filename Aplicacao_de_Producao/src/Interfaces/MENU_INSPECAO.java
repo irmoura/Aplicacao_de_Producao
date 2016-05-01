@@ -6,17 +6,12 @@
 package Interfaces;
 
 import java.awt.Dimension;
-import java.awt.KeyEventDispatcher;
-import java.awt.KeyboardFocusManager;
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -150,7 +145,7 @@ public class MENU_INSPECAO extends javax.swing.JInternalFrame {
         
         java.io.File arquivo = new java.io.File(DIRETORIO,OS );
         
-        JOptionPane.showMessageDialog(null,"Informação gravada com sucesso !");
+        TELA_PRINCIPAL.Mostra_Mensagem("Informação gravada com sucesso !", "Aviso");
         
         try {
             arquivo.createNewFile();
@@ -159,9 +154,8 @@ public class MENU_INSPECAO extends javax.swing.JInternalFrame {
         }
         
         /////////////////////////
-        String CONFORME;
         
-        CONFORME = TEXTO_CONFORME.getText();
+        String CONFORME = TEXTO_CONFORME.getText();
         
         FileWriter Conforme = null;
         try {
@@ -184,7 +178,7 @@ public class MENU_INSPECAO extends javax.swing.JInternalFrame {
         {
             if (OS.equals(""))
         {
-            JOptionPane.showMessageDialog(null,"Campos em branco ...");
+            TELA_PRINCIPAL.Mostra_Mensagem("Campos em branco ...", "Aviso");
         }
         }
         
@@ -197,7 +191,7 @@ public class MENU_INSPECAO extends javax.swing.JInternalFrame {
         
         int quantidade = diretorio.listFiles().length;//OBTEM A QUANTIDADE DE ARQUIVOS SALVOS
         
-        JOptionPane.showMessageDialog(null,"Você tem : "+quantidade+" ordens salvas.");
+        TELA_PRINCIPAL.Mostra_Mensagem("Você tem : "+quantidade+" ordens salvas.", "Aviso");
     
     }//GEN-LAST:event_BOTAO_QUANTIDADEActionPerformed
 
