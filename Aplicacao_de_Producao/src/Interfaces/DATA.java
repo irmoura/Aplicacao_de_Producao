@@ -1,3 +1,11 @@
+/*
+O arquivo de data que será lido deve conter 3 informações:
+
+Na primeira linha: os dias úteis daquele dia.
+Na segunda linha: os dias úteis totais do mês vigente.
+Na terceira linha: o dia base do mês vigente.
+
+*/
 package Interfaces;
 
 import java.io.BufferedReader;
