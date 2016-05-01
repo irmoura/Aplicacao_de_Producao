@@ -16,7 +16,6 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 /**
  *
  * @author Ismael Ribeiro
@@ -114,16 +113,15 @@ switch (this.mes) {
 }
 
 public static void Aviso_de_Domingo(){
-    JOptionPane.showMessageDialog(null,"Domingo o programa está de folga !","                        "
-                    +"                  Aviso",JOptionPane.ERROR_MESSAGE);
+    TELA_PRINCIPAL.Mostra_Mensagem("Domingo o programa está de folga !", "Aviso");
 }
 
 public static void Happy_New_Year(){
-    JOptionPane.showMessageDialog(null,"Feliz Ano Novo !!! ","Feliz Ano Novo",JOptionPane.INFORMATION_MESSAGE);
+    TELA_PRINCIPAL.Mostra_Mensagem("Feliz Ano Novo !!! ", "Feliz Ano Novo");
 }
 
 public static void Feriado(){
-    JOptionPane.showMessageDialog(null,"Hoje é feriado !!! ","Feriado",JOptionPane.INFORMATION_MESSAGE);
+    TELA_PRINCIPAL.Mostra_Mensagem("Hoje é feriado !!! ", "Feriado");
 }
 
 public static void Data_Automatica(String dia_do_ano){

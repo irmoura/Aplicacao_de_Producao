@@ -17,11 +17,11 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.*;
-import java.text.*;
 import java.util.Calendar;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -662,7 +662,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         {
             for(int i=0; i<1;i++)
             {
-                JOptionPane.showMessageDialog(null,"Você não pode selecionar as duas opções simultaneamente ...","Aviso",JOptionPane.WARNING_MESSAGE); 
+                TELA_PRINCIPAL.Mostra_Mensagem("Você não pode selecionar as duas opções simultaneamente ...", "Aviso");
             }
         }
         
@@ -798,7 +798,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         ////////////////////////////////////////////////////////////////////////
         if ((TEXTO_EM.getText().equals("")))
         {
-            JOptionPane.showMessageDialog(null,"Dados necessários em branco, por favor digite algo válido ...");
+            TELA_PRINCIPAL.Mostra_Mensagem("Dados necessários em branco, por favor digite algo válido ...", "Aviso");
         }
         
         else
@@ -813,7 +813,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
   
                  if (opcao != 0)    
                  {
-                    JOptionPane.showMessageDialog(null,"Você optou por não alterar as informações atuais.");
+                    TELA_PRINCIPAL.Mostra_Mensagem("Você optou por não alterar as informações atuais.", "Aviso");
                  }   
               
                  if (opcao == 0)
@@ -849,11 +849,11 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         } catch (IOException ex) {
             Logger.getLogger(MENU_PRODUCAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        JOptionPane.showMessageDialog(null," EM: "+Em+
+        TELA_PRINCIPAL.Mostra_Mensagem(" EM: "+Em+
                                 "\n TOTAL DE OL: "+TotaDeOL+
                                    "\n PROJEÇÃO: "+Projetado+"%"+
                                    "\n OL DO DIA: "+OL_DO_DIA+
-                                "\n\n Informações Salvas com Sucesso.","Aviso",JOptionPane.INFORMATION_MESSAGE);
+                                "\n\n Informações Salvas com Sucesso.","Aviso");
         }
                  }
                  
@@ -893,11 +893,11 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         } catch (IOException ex) {
             Logger.getLogger(MENU_PRODUCAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        JOptionPane.showMessageDialog(null," EM: "+Em+
+        TELA_PRINCIPAL.Mostra_Mensagem(" EM: "+Em+
                                 "\n TOTAL DE OL: "+TotaDeOL+
                                    "\n PROJEÇÃO: "+Projetado+"%"+
                                    "\n OL DO DIA: "+OL_DO_DIA+
-                                "\n\n Informações Salvas com Sucesso.","Aviso",JOptionPane.INFORMATION_MESSAGE);
+                                "\n\n Informações Salvas com Sucesso.","Aviso");
         }
         
         }
@@ -933,17 +933,17 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         } catch (IOException ex) {
             Logger.getLogger(MENU_PRODUCAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        JOptionPane.showMessageDialog(null," EM: "+Em+
+        TELA_PRINCIPAL.Mostra_Mensagem(" EM: "+Em+
                                 "\n TOTAL DE OL: "+TotaDeOL+
                                    "\n PROJEÇÃO: "+Projetado+"%"+
                                    "\n OL DO DIA: "+OL_DO_DIA+
-                                "\n\n Informações Salvas com Sucesso.","Aviso",JOptionPane.INFORMATION_MESSAGE);
+                                "\n\n Informações Salvas com Sucesso.","Aviso");
         }
         
         else
         
         {
-            JOptionPane.showMessageDialog(null,"Digite um EM válido ...");
+            TELA_PRINCIPAL.Mostra_Mensagem("Digite um EM válido ...", "Aviso");
         }
         
     }//GEN-LAST:event_BOTAO_SALVARActionPerformed
@@ -962,10 +962,10 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
              String  OL = arq.readLine();
              String  PROJETADO = arq.readLine();
              
-             JOptionPane.showMessageDialog(null," EM CADASTRADO: "+EM+
+             TELA_PRINCIPAL.Mostra_Mensagem(" EM CADASTRADO: "+EM+
                                 "\n TOTAL DE OL: "+OL+
                                    "\n PROJEÇÃO ATUAL: "+PROJETADO+"%"+
-                                "\n\n","Informações Atuais",JOptionPane.INFORMATION_MESSAGE);
+                                "\n\n","Informações Atuais");
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MENU_PRODUCAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -993,7 +993,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
              String  PROJETADO = arq.readLine();
              String OL_DO_DIA = arq.readLine();
              
-             JOptionPane.showMessageDialog(null," OL DO DIA: "+OL_DO_DIA,"Informações Atuais",JOptionPane.INFORMATION_MESSAGE);
+             TELA_PRINCIPAL.Mostra_Mensagem(" OL DO DIA: "+OL_DO_DIA,"Informações Atuais");
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MENU_PRODUCAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -1045,7 +1045,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
   
                  if (opcao != 0)    
                  {
-                    JOptionPane.showMessageDialog(null,"Você optou por não alterar as informações atuais.");
+                    TELA_PRINCIPAL.Mostra_Mensagem("Você optou por não alterar as informações atuais.", "Aviso");
                  }   
               
                  if (opcao == 0)
@@ -1085,7 +1085,7 @@ PORCENTAGEM DO DIA BASE
         } catch (IOException ex) {
             Logger.getLogger(MENU_PRODUCAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        JOptionPane.showMessageDialog(null,"As configurações padrões do aplicativo foram gravadas com sucesso.","Aviso",JOptionPane.INFORMATION_MESSAGE);
+        TELA_PRINCIPAL.Mostra_Mensagem("As configurações padrões do aplicativo foram gravadas com sucesso.","Aviso");
                  }
     }//GEN-LAST:event_BOTAO_PADRAOActionPerformed
 
