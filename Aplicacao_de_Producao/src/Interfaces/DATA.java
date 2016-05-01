@@ -69,7 +69,7 @@ switch (this.mes) {
                 MES_VALIDO_ABREVIADO = "ABR";
                 break;
             case 4:
-                //MES_VALIDO = 5;
+                MES_VALIDO = 5;
                 MES_VALIDO_STR = "Maio";
                 MES_VALIDO_ABREVIADO = "MAI";
                 break;

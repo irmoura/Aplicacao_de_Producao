@@ -45,6 +45,8 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
     public MENU_ORDEM_DE_SERVICO menu_ordem_de_servico;
     public MENU_PONTO menu_ponto;
     public PASSWORD password;
+    public Date dataSistema;
+    public Calendar now;
     
     public static String segundos_String = "";
     public static int minutos_int = 0;
@@ -72,10 +74,10 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         menu_ordem_de_servico = new MENU_ORDEM_DE_SERVICO();
         menu_ponto = new MENU_PONTO();
         password = new PASSWORD();
+        dataSistema = new Date();
         
         initComponents();
         
-        Date dataSistema = new Date();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         
         DATA.setText(formato.format(dataSistema));
@@ -528,7 +530,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
           
         /////////////////////
 
-        timer = new Timer(1000, new hora());
+        timer = new Timer(1000, new hora());//FAZ PARTE DO CODIGO PARA MOSTRAR A HORA
         timer.start();
         
         java.io.File DIRETORIO_PRINCIPAL = new java.io.File("C:\\PRODUCAO");
@@ -718,7 +720,7 @@ voice = vm.getVoice("kevin16");
 voice.allocate();
 voice.speak("hello");*/
     
-Calendar now = Calendar.getInstance();
+now = Calendar.getInstance();
 HORA.setText(String.format("%1$tH:%1$tM:%1$tS", now));
 
 String segundos = "";
