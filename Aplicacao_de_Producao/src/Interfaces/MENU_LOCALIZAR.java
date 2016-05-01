@@ -31,7 +31,11 @@ public class MENU_LOCALIZAR extends javax.swing.JInternalFrame {
         initComponents();
         BOTAO_LOCALIZAR.setToolTipText("Localizar");
     }
-
+    
+    public void Mostra_Mensagem(String mensagem, String titulo){
+        JOptionPane.showMessageDialog(null,mensagem,titulo,JOptionPane.WARNING_MESSAGE);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -110,7 +114,14 @@ public class MENU_LOCALIZAR extends javax.swing.JInternalFrame {
         
         String OS = TEXTO_OS.getText();
         OS = OS.replace("/", "");
-        OS += ".txt";
+        
+        if(OS.equals("")){
+            Mostra_Mensagem("Campo pesquisa em branco, por favor digite um número de OS válido","Aviso");
+        }
+        else
+        if(!OS.equals("")){
+            
+            OS += ".txt";
         
         File dir = new File("C:\\PRODUCAO\\INSPECAO");
         File arq = new File(dir,OS);
@@ -118,18 +129,22 @@ public class MENU_LOCALIZAR extends javax.swing.JInternalFrame {
         try {
             
             FileReader fileReader = new FileReader(arq);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);//fileReader
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
             
-             String conforme = bufferedReader.readLine();
+            String conforme = bufferedReader.readLine();
              
-             JOptionPane.showMessageDialog(null,"A OS: "+TEXTO_OS.getText()+" ESTÁ NO CONFORME: "+conforme);
+            Mostra_Mensagem("A OS: "+TEXTO_OS.getText()+" ESTÁ NO CONFORME: "+conforme,"Aviso");
             
         } catch (FileNotFoundException ex) {
-            JOptionPane.showMessageDialog(null,"Ordem de serviço não encontrada ...");
-            Logger.getLogger(MENU_LOCALIZAR.class.getName()).log(Level.SEVERE, null, ex);
+            
+            Mostra_Mensagem("Ordem de serviço não encontrada ...","Aviso");
+            
         } catch (IOException ex) {
             Logger.getLogger(MENU_LOCALIZAR.class.getName()).log(Level.SEVERE, null, ex);
         }
+            
+        }
+    
     }//GEN-LAST:event_BOTAO_LOCALIZARActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened

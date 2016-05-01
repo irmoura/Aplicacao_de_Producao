@@ -13,7 +13,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.*;
 import java.applet.Applet;
 import java.applet.AudioClip;
 import java.awt.Color;
@@ -22,6 +21,8 @@ import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.util.Random;
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 /**
  *
