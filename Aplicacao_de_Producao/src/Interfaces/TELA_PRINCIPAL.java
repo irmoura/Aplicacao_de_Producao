@@ -7,7 +7,6 @@ package Interfaces;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -19,6 +18,8 @@ import java.awt.Color;
 import java.awt.KeyEventDispatcher;
 import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 import javax.swing.JOptionPane;
@@ -43,6 +44,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
     public MENU_LOCALIZAR menu_localizar;
     public MENU_ORDEM_DE_SERVICO menu_ordem_de_servico;
     public MENU_PONTO menu_ponto;
+    public PASSWORD password;
     
     public static String segundos_String = "";
     public static int minutos_int = 0;
@@ -69,6 +71,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         menu_localizar = new MENU_LOCALIZAR();
         menu_ordem_de_servico = new MENU_ORDEM_DE_SERVICO();
         menu_ponto = new MENU_PONTO();
+        password = new PASSWORD();
         
         initComponents();
         
@@ -87,7 +90,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         data.Verifica_Mes();
         
 /********************************************************************************************************************************************************/
-        
+
         //////////////////////////
         SimpleDateFormat dia = new SimpleDateFormat("dd");
         SimpleDateFormat mes = new SimpleDateFormat("MM");
@@ -99,22 +102,21 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         
         if ((dia_int <=31) && (mes_int != data.MES_VALIDO) && (ano_int == data.ANO_VALIDO || ano_int != data.ANO_VALIDO))
         {
-            PASSWORD password = new PASSWORD();
             
             String senha = "";
+            int tentativas = 3;//Define o número de tentativas que o usuário terá para acertar a senha.
             
-            for(int i=0;i<3;i++)
+            for(int i=0;i<tentativas;i++)
             {
                 if(!senha.equals(password.senha))
                     
                 {
                     
-                    senha = "";
-                    
                     senha = JOptionPane.showInputDialog(null,"Este aplicativo é válido apenas para "
                             +data.MES_VALIDO_STR+" de "
                             +data.ANO_VALIDO+".\nCaso queira liberar o acesso digite a senha do desenvolvedor: ","Acesso Bloqueado "
                                     +(i+1)+"ª tentativa.",JOptionPane.OK_CANCEL_OPTION);
+                    
                 }
                 
             }
@@ -123,13 +125,12 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
             if (!senha.equals(password.senha) || senha.equals(null))
                 
             {
-                
-                JOptionPane.showMessageDialog(null,"Senha incorreta ou operação cancelada, o programa será encerrado.");
+                Mostra_Mensagem("Senha incorreta ou operação cancelada, o programa será encerrado.","Aviso");
                 System.exit(0);
             }
             else
             {
-                JOptionPane.showMessageDialog(null,"Acesso liberado.");
+                Mostra_Mensagem("Acesso liberado.","Welcome");
             }
         }
         else
@@ -160,9 +161,11 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         //audio.play();
         audio.stop();
 }
-    
-    
 
+    public static void Mostra_Mensagem(String mensagem, String titulo){
+        JOptionPane.showMessageDialog(null,mensagem,titulo,JOptionPane.WARNING_MESSAGE);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

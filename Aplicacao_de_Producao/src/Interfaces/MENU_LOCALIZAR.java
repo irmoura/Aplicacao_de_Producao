@@ -16,7 +16,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,12 +27,9 @@ public class MENU_LOCALIZAR extends javax.swing.JInternalFrame {
      * Creates new form MENU_LOCALIZAR
      */
     public MENU_LOCALIZAR() {
+        
         initComponents();
         BOTAO_LOCALIZAR.setToolTipText("Localizar");
-    }
-    
-    public void Mostra_Mensagem(String mensagem, String titulo){
-        JOptionPane.showMessageDialog(null,mensagem,titulo,JOptionPane.WARNING_MESSAGE);
     }
     
     /**
@@ -116,7 +112,7 @@ public class MENU_LOCALIZAR extends javax.swing.JInternalFrame {
         OS = OS.replace("/", "");
         
         if(OS.equals("")){
-            Mostra_Mensagem("Campo pesquisa em branco, por favor digite um número de OS válido","Aviso");
+            TELA_PRINCIPAL.Mostra_Mensagem("Campo pesquisa em branco, por favor digite um número de OS válido","Aviso");
         }
         else
         if(!OS.equals("")){
@@ -133,11 +129,11 @@ public class MENU_LOCALIZAR extends javax.swing.JInternalFrame {
             
             String conforme = bufferedReader.readLine();
              
-            Mostra_Mensagem("A OS: "+TEXTO_OS.getText()+" ESTÁ NO CONFORME: "+conforme,"Aviso");
+            TELA_PRINCIPAL.Mostra_Mensagem("A OS: "+TEXTO_OS.getText()+" ESTÁ NO CONFORME: "+conforme,"Aviso");
             
         } catch (FileNotFoundException ex) {
             
-            Mostra_Mensagem("Ordem de serviço não encontrada ...","Aviso");
+            TELA_PRINCIPAL.Mostra_Mensagem("Ordem de serviço não encontrada ...","Aviso");
             
         } catch (IOException ex) {
             Logger.getLogger(MENU_LOCALIZAR.class.getName()).log(Level.SEVERE, null, ex);
