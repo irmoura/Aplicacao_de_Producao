@@ -51,6 +51,7 @@ public class TELA_DE_CARREGAMENTO extends javax.swing.JFrame {
     private void initComponents() {
 
         BARRA_DE_PROGRESSO = new javax.swing.JProgressBar();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aplicativo de Produção Ibyte F25");
@@ -59,26 +60,14 @@ public class TELA_DE_CARREGAMENTO extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BARRA_DE_PROGRESSO.setBackground(new java.awt.Color(255, 0, 51));
         BARRA_DE_PROGRESSO.setForeground(new java.awt.Color(255, 0, 51));
+        getContentPane().add(BARRA_DE_PROGRESSO, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 275, 380, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BARRA_DE_PROGRESSO, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(275, Short.MAX_VALUE)
-                .addComponent(BARRA_DE_PROGRESSO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/IMAGENS/Logo Ibyte.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -133,5 +122,6 @@ public class TELA_DE_CARREGAMENTO extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JProgressBar BARRA_DE_PROGRESSO;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
