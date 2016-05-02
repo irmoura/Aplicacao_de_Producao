@@ -60,14 +60,13 @@ public class TELA_DE_CARREGAMENTO extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BARRA_DE_PROGRESSO.setBackground(new java.awt.Color(255, 0, 51));
         BARRA_DE_PROGRESSO.setForeground(new java.awt.Color(255, 0, 51));
-        getContentPane().add(BARRA_DE_PROGRESSO, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 275, 380, -1));
+        getContentPane().add(BARRA_DE_PROGRESSO, java.awt.BorderLayout.CENTER);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/IMAGENS/Logo Ibyte.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/IMAGENS/Logo Ibyte 2.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, java.awt.BorderLayout.PAGE_START);
 
         pack();
         setLocationRelativeTo(null);

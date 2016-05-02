@@ -371,6 +371,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         
         //this.setExtendedState(MAXIMIZED_BOTH);//DEFINE A JANELA PARA INICIAR MAXIMIZADA
         this.setExtendedState(ICONIFIED);//DEFINE A JANELA PARA INICIAR MINIMIZADA
+        this.setVisible(false);
         
         int delay = 1000;//1000
         //
@@ -382,6 +383,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
                 
                 if(contador == 3 && minutos_int == 0){
                     setExtendedState(MAXIMIZED_BOTH);
+                    setVisible(true);
                 }
                 
                 /////////////////////////SEGUNDOS/////////////////////////
