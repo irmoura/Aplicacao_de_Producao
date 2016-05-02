@@ -49,6 +49,8 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
     public static String setor;
     public static String porcentagem_dia_base;
     
+    public String MES_VALIDO_ABREVIADO;
+    
     /**
      * Creates new form 
      */
@@ -82,7 +84,6 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         BOTAO_PADRAO.setToolTipText("Padrão");
         BOTAO_LIMPAR.setToolTipText("Limpar");
         BOTAO_RESULTADO.setToolTipText("Resultado");
-        DIABASE_.setText("DIA BASE "+data.DIA_BASE+"/ "+data.MES_VALIDO_ABREVIADO);
     }
     
     public void Arquivo(){
@@ -1095,6 +1096,52 @@ PORCENTAGEM DO DIA BASE
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
         // TODO add your handling code here:
+        
+        Calendar DIA_ATUAL = Calendar.getInstance();
+        int mes = DIA_ATUAL.get(Calendar.MONTH);
+        
+        switch (mes) {
+            case 0:
+                MES_VALIDO_ABREVIADO = "JAN";
+                break;
+            case 1:
+                MES_VALIDO_ABREVIADO = "FEV";
+                break;
+            case 2:
+                MES_VALIDO_ABREVIADO = "MAR";
+                break;
+            case 3:
+                MES_VALIDO_ABREVIADO = "ABR";
+                break;
+            case 4:
+                MES_VALIDO_ABREVIADO = "MAI";
+                break;
+            case 5:
+                MES_VALIDO_ABREVIADO = "JUN";
+                break;
+            case 6:
+                MES_VALIDO_ABREVIADO = "JUL";
+                break;
+            case 7:
+                MES_VALIDO_ABREVIADO = "AGO";
+                break;
+            case 8:
+                MES_VALIDO_ABREVIADO = "SET";
+                break;
+            case 9:
+                MES_VALIDO_ABREVIADO = "OUT";
+                break;
+            case 10:
+                MES_VALIDO_ABREVIADO = "NOV";
+                break;
+            case 11:
+                MES_VALIDO_ABREVIADO = "DEZ";
+                break;
+            default:
+                break;
+        }
+        
+        DIABASE_.setText("DIA BASE "+data.DIA_BASE+"/ "+MES_VALIDO_ABREVIADO);
         
         KeyboardFocusManager.getCurrentKeyboardFocusManager()
             .addKeyEventDispatcher(new KeyEventDispatcher() {

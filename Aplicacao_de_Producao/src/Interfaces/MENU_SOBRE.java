@@ -6,6 +6,7 @@
 package Interfaces;
 
 import java.awt.Dimension;
+import java.util.Calendar;
 
 /**
  *
@@ -16,11 +17,57 @@ public class MENU_SOBRE extends javax.swing.JInternalFrame {
     public DATA data;
     public Dimension dimensao;
     
+    public String MES_VALIDO_STR;
+    
     /**
      * Creates new form MENU_SOBRE
      */
     public MENU_SOBRE() {
         initComponents();
+        
+        Calendar DIA_ATUAL = Calendar.getInstance();
+        int mes = DIA_ATUAL.get(Calendar.MONTH);
+        
+        switch (mes) {
+            case 0:
+                MES_VALIDO_STR = "Janeiro";
+                break;
+            case 1:
+                MES_VALIDO_STR = "Fevereiro";
+                break;
+            case 2:
+                MES_VALIDO_STR = "Março";
+                break;
+            case 3:
+                MES_VALIDO_STR = "Abril";
+                break;
+            case 4:
+                MES_VALIDO_STR = "Maio";
+                break;
+            case 5:
+                MES_VALIDO_STR = "Junho";
+                break;
+            case 6:
+                MES_VALIDO_STR = "Julho";
+                break;
+            case 7:
+                MES_VALIDO_STR = "Agosto";
+                break;
+            case 8:
+                MES_VALIDO_STR = "Setembro";
+                break;
+            case 9:
+                MES_VALIDO_STR = "Outubro";
+                break;
+            case 10:
+                MES_VALIDO_STR = "Novembro";
+                break;
+            case 11:
+                MES_VALIDO_STR = "Dezembro";
+                break;
+            default:
+                break;
+        }
         
         data = new DATA();
         dimensao = new Dimension();
@@ -28,7 +75,7 @@ public class MENU_SOBRE extends javax.swing.JInternalFrame {
         AREA_DE_TEXTO.setText("Aplicativo desenvolvido em java com o objetivo \n" +
                               "similar ao da planilha de acompanhamento.\n" +
                               "\n" +
-                              "*Válido para "+data.MES_VALIDO_STR+" de "+data.ANO_VALIDO+".\n" +
+                              "*Válido para "+MES_VALIDO_STR+" de "+data.ANO_VALIDO+".\n" +
                               "\n" +
                               "Desenvolvedor: Ismael Ribeiro Moura.");
     }
