@@ -183,6 +183,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         DATA = new javax.swing.JLabel();
         HORA = new javax.swing.JLabel();
         CRONOMETRO = new javax.swing.JLabel();
+        DIA_DO_ANO = new javax.swing.JLabel();
         label_tempo_logado = new javax.swing.JLabel();
         IMAGEM_DE_TESTE = new javax.swing.JLabel();
         MENU = new javax.swing.JMenuBar();
@@ -239,6 +240,13 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         CRONOMETRO.setToolTipText("Cronômetro");
         JanelaInternaPrincipal.add(CRONOMETRO);
         CRONOMETRO.setBounds(200, 650, 90, 30);
+
+        DIA_DO_ANO.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        DIA_DO_ANO.setForeground(new java.awt.Color(255, 255, 255));
+        DIA_DO_ANO.setText("366");
+        DIA_DO_ANO.setToolTipText("Dia do Ano");
+        JanelaInternaPrincipal.add(DIA_DO_ANO);
+        DIA_DO_ANO.setBounds(400, 650, 87, 30);
 
         label_tempo_logado.setBackground(new java.awt.Color(255, 255, 255));
         label_tempo_logado.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -356,6 +364,8 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
     
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
+        
+        DIA_DO_ANO.setText(""+data.dia_do_ano);
         
         int delay = 1000;//1000
         //
@@ -690,6 +700,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CRONOMETRO;
     private javax.swing.JLabel DATA;
+    private javax.swing.JLabel DIA_DO_ANO;
     private javax.swing.JLabel HORA;
     private javax.swing.JLabel IMAGEM_DE_TESTE;
     public javax.swing.JDesktopPane JanelaInternaPrincipal;
