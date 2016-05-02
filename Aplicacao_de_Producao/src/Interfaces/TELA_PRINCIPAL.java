@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import java.applet.Applet;
 import java.applet.AudioClip;
 import java.awt.Color;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.KeyEventDispatcher;
 import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
@@ -205,6 +206,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ibyte - Supervisão de Produção IBS F05");
         setBackground(new java.awt.Color(0, 0, 0));
+        setExtendedState(1);
         setForeground(new java.awt.Color(0, 0, 0));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -367,6 +369,9 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
         
         DIA_DO_ANO.setText(""+data.dia_do_ano);
         
+        //this.setExtendedState(MAXIMIZED_BOTH);//DEFINE A JANELA PARA INICIAR MAXIMIZADA
+        this.setExtendedState(ICONIFIED);//DEFINE A JANELA PARA INICIAR MINIMIZADA
+        
         int delay = 1000;//1000
         //
         timer = new Timer(delay, new ActionListener() {
@@ -374,6 +379,10 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 
                 contador++;
+                
+                if(contador == 3 && minutos_int == 0){
+                    setExtendedState(MAXIMIZED_BOTH);
+                }
                 
                 /////////////////////////SEGUNDOS/////////////////////////
                 if(contador < 10){
@@ -535,8 +544,6 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
                      return false;
                 }
         }); 
-        
-        this.setExtendedState(MAXIMIZED_BOTH);//DEFINE A JANELA PARA INICIAR MAXIMIZADA
           
         /////////////////////
 

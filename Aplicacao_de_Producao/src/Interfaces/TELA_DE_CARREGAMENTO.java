@@ -36,9 +36,6 @@ public class TELA_DE_CARREGAMENTO extends javax.swing.JFrame {
             else{
                 timer.stop();
                 setVisible(false);
-                //new TELA_PRINCIPAL().setVisible(true);
-                //System.exit(0);
-                //JOptionPane.showMessageDialog(null,"Progresso concluido");
             }
             
         }
@@ -129,8 +126,7 @@ public class TELA_DE_CARREGAMENTO extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new TELA_DE_CARREGAMENTO().setVisible(true);
-                //new TELA_PRINCIPAL().setVisible(true);
+                
             }
         });
     }
