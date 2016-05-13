@@ -148,8 +148,12 @@ public static void Data_Automatica(String dia_do_ano){
         }
         
     } catch (FileNotFoundException ex) {
+        if(TELA_PRINCIPAL.letra.equals("")){
+            JOptionPane.showMessageDialog(null,"Digite a letra da unidade que contém a base de dados.","Data Base Not Found",JOptionPane.WARNING_MESSAGE);
+            System.exit(0);
+        }
         JOptionPane.showMessageDialog(null,"A unidade "+TELA_PRINCIPAL.letra+
-                ": não existe ou não contém o banco de dados.","",JOptionPane.WARNING_MESSAGE);
+                ": não existe ou não contém o banco de dados.","Data Base Not Found",JOptionPane.WARNING_MESSAGE);
         System.exit(0);
         Logger.getLogger(DATA.class.getName()).log(Level.SEVERE, null, ex);
     }
