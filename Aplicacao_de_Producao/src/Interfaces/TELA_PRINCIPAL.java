@@ -57,7 +57,7 @@ public class TELA_PRINCIPAL extends javax.swing.JFrame {
     public static String horas = "";
     public static int HORIZONTAL, VERTICAL,contador;
     
-    public static String letra = JOptionPane.showInputDialog("Digite a letra: ");
+    public static String letra = JOptionPane.showInputDialog(null,"Digite a letra :","DataBase",JOptionPane.QUESTION_MESSAGE);
     
     /**
      * Creates new form Principal
