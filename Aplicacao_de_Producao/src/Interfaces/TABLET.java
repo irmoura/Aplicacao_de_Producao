@@ -21,7 +21,7 @@ public class TABLET {
 double dia;
 String setor = "Tablet";
 
-File dir = new File("C:\\PRODUCAO\\SETORES");
+File dir = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\SETORES");
 
 File arq = new File(dir,"TABLET.txt");
 

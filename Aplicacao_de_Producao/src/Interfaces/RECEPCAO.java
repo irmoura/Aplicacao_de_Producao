@@ -22,7 +22,7 @@ public class RECEPCAO {
 public double dia;//QUANTIDADE DE MÁQUINAS A SEREM FEITAS NO DIA ...
 public String setor = "Recepção";//NOME DO SETOR
 
-File dir = new File("C:\\PRODUCAO\\SETORES");
+File dir = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\SETORES");
 
 File arq = new File(dir,"RECEPCAO.txt");
 

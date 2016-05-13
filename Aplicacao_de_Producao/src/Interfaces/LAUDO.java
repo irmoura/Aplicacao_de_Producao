@@ -21,7 +21,7 @@ public class LAUDO {
 double dia;
 String setor = "Laudo"; 
 
-File dir = new File("C:\\PRODUCAO\\SETORES");
+File dir = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\SETORES");
 
 File arq = new File(dir,"LAUDO.txt");
 

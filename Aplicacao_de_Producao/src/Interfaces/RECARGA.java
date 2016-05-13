@@ -21,7 +21,7 @@ public class RECARGA {
 double dia;
 String setor = "Recarga"; 
 
-File dir = new File("C:\\PRODUCAO\\SETORES");
+File dir = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\SETORES");
 
 File arq = new File(dir,"RECARGA.txt");
 
