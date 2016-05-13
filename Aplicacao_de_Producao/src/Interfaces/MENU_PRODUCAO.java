@@ -87,7 +87,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
     }
     
     public void Arquivo(){
-        File dir = new File("C:\\PRODUCAO\\");
+        File dir = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\");
 
         File arq = new File(dir,"TECNICO.txt");
         
@@ -767,7 +767,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         int N_Q_OL = 0;
         
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        File DIRETORIO = new File("C:\\PRODUCAO");//PASTA QUE SERÁ ABERTA
+        File DIRETORIO = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO");//PASTA QUE SERÁ ABERTA
         File ARQUIVO_OL = new File(DIRETORIO, "TECNICO.txt");//ARQUIVO QUE SERÁ ABERTO
         
         try {
@@ -830,7 +830,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         
         
         try {
-            TECNICO = new FileWriter("c:\\PRODUCAO\\TECNICO.txt");
+            TECNICO = new FileWriter(TELA_PRINCIPAL.letra+":\\PRODUCAO\\TECNICO.txt");
             
         } catch (IOException ex) {
             Logger.getLogger(MENU_PRODUCAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -874,7 +874,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         
         
         try {
-            TECNICO = new FileWriter("c:\\PRODUCAO\\TECNICO.txt");
+            TECNICO = new FileWriter(TELA_PRINCIPAL.letra+":\\PRODUCAO\\TECNICO.txt");
             
         } catch (IOException ex) {
             Logger.getLogger(MENU_PRODUCAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -914,7 +914,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         
         
         try {
-            TECNICO = new FileWriter("c:\\PRODUCAO\\TECNICO.txt");
+            TECNICO = new FileWriter(TELA_PRINCIPAL.letra+":\\PRODUCAO\\TECNICO.txt");
             
         } catch (IOException ex) {
             Logger.getLogger(MENU_PRODUCAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -951,7 +951,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
 
     private void BOTAO_ATUALActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_ATUALActionPerformed
         // TODO add your handling code here:
-        File DIRETORIO = new File("C:\\PRODUCAO");
+        File DIRETORIO = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO");
         File ARQUIVO_OL = new File(DIRETORIO, "TECNICO.txt");
         
         try {
@@ -981,7 +981,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
 
     private void BOTAO_OL_DO_DIAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_OL_DO_DIAActionPerformed
         // TODO add your handling code here:
-        File DIRETORIO = new File("C:\\PRODUCAO");
+        File DIRETORIO = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO");
         File ARQUIVO_OL = new File(DIRETORIO, "TECNICO.txt");
         
         try {
@@ -1056,7 +1056,7 @@ public class MENU_PRODUCAO extends javax.swing.JInternalFrame {
         
         
         try {
-            TECNICO = new FileWriter("c:\\PRODUCAO\\TECNICO.txt");
+            TECNICO = new FileWriter(TELA_PRINCIPAL.letra+":\\PRODUCAO\\TECNICO.txt");
             
         } catch (IOException ex) {
             Logger.getLogger(MENU_PRODUCAO.class.getName()).log(Level.SEVERE, null, ex);

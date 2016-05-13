@@ -191,7 +191,7 @@ public class MENU_ORDEM_DE_SERVICO extends javax.swing.JInternalFrame {
     private void BOTAO_SALVARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_SALVARActionPerformed
         // TODO add your handling code here:
         
-        java.io.File DIRETORIO = new java.io.File("C:\\PRODUCAO\\OS");
+        java.io.File DIRETORIO = new java.io.File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\OS");
         DIRETORIO.mkdir();
         
         String OS = TEXTO_OS.getText();
@@ -203,7 +203,7 @@ public class MENU_ORDEM_DE_SERVICO extends javax.swing.JInternalFrame {
         
         OS = OS+".txt";
         
-        File dir = new File("C:\\PRODUCAO\\OS");//LER
+        File dir = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\OS");//LER
         
         File arq = new File(dir,OS);//LER
             try {
@@ -264,7 +264,7 @@ public class MENU_ORDEM_DE_SERVICO extends javax.swing.JInternalFrame {
         FileWriter Obs = null;
         
         try {
-            Obs = new FileWriter("C:\\PRODUCAO\\OS\\"+OS);
+            Obs = new FileWriter(TELA_PRINCIPAL.letra+":\\PRODUCAO\\OS\\"+OS);
         } catch (IOException ex) {
             Logger.getLogger(MENU_ORDEM_DE_SERVICO.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -311,7 +311,7 @@ public class MENU_ORDEM_DE_SERVICO extends javax.swing.JInternalFrame {
         
         OS = OS+".txt";
         
-        File dir = new File("C:\\PRODUCAO\\OS");
+        File dir = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\OS");
         
         File arq = new File(dir,OS);//dir,OS
         
@@ -462,7 +462,7 @@ public class MENU_ORDEM_DE_SERVICO extends javax.swing.JInternalFrame {
 //            Logger.getLogger(MENU_ORDEM_DE_SERVICO.class.getName()).log(Level.SEVERE, null, ex);
 //        }
         
-        File diretorio = new File("C:\\PRODUCAO\\OS");
+        File diretorio = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\OS");
         
         String[] stringDir = diretorio.list();
         String[] stringDir2 = diretorio.list();

@@ -130,7 +130,7 @@ public static void Data_Automatica(String dia_do_ano){
     
     dia_do_ano_str = dia_do_ano_str+".txt";
     
-    File ARQUIVO = new File("C:\\PRODUCAO\\DATAS\\"+dia_do_ano_str);
+    File ARQUIVO = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\DATAS\\"+dia_do_ano_str);//"C:\\PRODUCAO\\DATAS\\"+dia_do_ano_str
     
     try {
         FileReader fileReader = new FileReader(ARQUIVO);

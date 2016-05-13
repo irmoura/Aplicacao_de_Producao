@@ -272,7 +272,7 @@ public class MENU_PONTO extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         HORARIO horario = new HORARIO();
         
-        java.io.File DIRETORIO_DO_PONTO = new java.io.File("C:\\PRODUCAO\\PONTO");
+        java.io.File DIRETORIO_DO_PONTO = new java.io.File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\PONTO");
         DIRETORIO_DO_PONTO.mkdir();
         
         int hora = 0;
@@ -296,7 +296,7 @@ public class MENU_PONTO extends javax.swing.JInternalFrame {
         
         horario.horario(hora, minuto, hora_de_chegada, horacerta,Entrada_ou_Saida);//METODO DA CLASSE HORARIO
         
-        java.io.File DATA_DA_PASTA = new java.io.File("C:\\PRODUCAO\\PONTO\\"
+        java.io.File DATA_DA_PASTA = new java.io.File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\PONTO\\"
                 +COMBO_DIA.getSelectedItem()+"-"
                 +COMBO_MES.getSelectedItem()+"-"
                 +COMBO_ANO.getSelectedItem());//CRIA A PASTA COM A DATA DEFINIDA NOS COMBOS
@@ -400,7 +400,7 @@ public class MENU_PONTO extends javax.swing.JInternalFrame {
                                   COMBO_MES.getSelectedItem()+"-"+
                                   COMBO_ANO.getSelectedItem();
         
-        File ARQUIVO = new File("C:\\PRODUCAO\\PONTO\\"+DATA_DA_PASTA+"\\"+HORARIO);
+        File ARQUIVO = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\PONTO\\"+DATA_DA_PASTA+"\\"+HORARIO);
         
         String Verifica_Selecao = BOTAO_ALTERNADOR.getText();//Verifica se o botão de seleção está em entrada ou saida.
         

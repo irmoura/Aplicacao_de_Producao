@@ -119,7 +119,7 @@ public class MENU_LOCALIZAR extends javax.swing.JInternalFrame {
             
             OS += ".txt";
         
-        File dir = new File("C:\\PRODUCAO\\INSPECAO");
+        File dir = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\INSPECAO");
         File arq = new File(dir,OS);
         
         try {

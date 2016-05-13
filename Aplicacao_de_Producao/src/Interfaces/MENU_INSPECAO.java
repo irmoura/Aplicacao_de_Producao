@@ -132,7 +132,7 @@ public class MENU_INSPECAO extends javax.swing.JInternalFrame {
     private void BOTAO_SALVARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_SALVARActionPerformed
         // TODO add your handling code here:
         
-        java.io.File DIRETORIO = new java.io.File("C:\\PRODUCAO\\INSPECAO");
+        java.io.File DIRETORIO = new java.io.File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\INSPECAO");
         DIRETORIO.mkdir();
         
         String OS = TEXTO_OS.getText();
@@ -159,7 +159,7 @@ public class MENU_INSPECAO extends javax.swing.JInternalFrame {
         
         FileWriter Conforme = null;
         try {
-            Conforme = new FileWriter("C:\\PRODUCAO\\INSPECAO\\"+OS);
+            Conforme = new FileWriter(TELA_PRINCIPAL.letra+":\\PRODUCAO\\INSPECAO\\"+OS);
         } catch (IOException ex) {
             Logger.getLogger(MENU_INSPECAO.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -187,7 +187,7 @@ public class MENU_INSPECAO extends javax.swing.JInternalFrame {
     private void BOTAO_QUANTIDADEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_QUANTIDADEActionPerformed
         // TODO add your handling code here:
         
-        File diretorio = new File("C:\\PRODUCAO\\INSPECAO\\");
+        File diretorio = new File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\INSPECAO\\");
         
         int quantidade = diretorio.listFiles().length;//OBTEM A QUANTIDADE DE ARQUIVOS SALVOS
         
