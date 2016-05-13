@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Ismael Ribeiro
@@ -147,6 +148,9 @@ public static void Data_Automatica(String dia_do_ano){
         }
         
     } catch (FileNotFoundException ex) {
+        JOptionPane.showMessageDialog(null,"A unidade "+TELA_PRINCIPAL.letra+
+                ": não existe ou não contém o banco de dados.","",JOptionPane.WARNING_MESSAGE);
+        System.exit(0);
         Logger.getLogger(DATA.class.getName()).log(Level.SEVERE, null, ex);
     }
     
