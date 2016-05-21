@@ -297,7 +297,7 @@
     <Component class="javax.swing.JToggleButton" name="BOTAO_ALTERNADOR">
       <Properties>
         <Property name="text" type="java.lang.String" value="Entrada ou Saida ?"/>
-        <Property name="toolTipText" type="java.lang.String" value="Selecione se o hor&#xe1;rio a ser gravado &#xe9; entrada ou sa&#xed;da."/>
+        <Property name="toolTipText" type="java.lang.String" value="Selecione se o hor&#xe1;rio a ser procurado &#xe9; entrada ou sa&#xed;da."/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BOTAO_ALTERNADORActionPerformed"/>

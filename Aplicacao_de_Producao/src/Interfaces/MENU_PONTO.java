@@ -124,7 +124,7 @@ public class MENU_PONTO extends javax.swing.JInternalFrame {
         jLabel2.setText("DATA");
 
         BOTAO_ALTERNADOR.setText("Entrada ou Saida ?");
-        BOTAO_ALTERNADOR.setToolTipText("Selecione se o horário a ser gravado é entrada ou saída.");
+        BOTAO_ALTERNADOR.setToolTipText("Selecione se o horário a ser procurado é entrada ou saída.");
         BOTAO_ALTERNADOR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BOTAO_ALTERNADORActionPerformed(evt);
