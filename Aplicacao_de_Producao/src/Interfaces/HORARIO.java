@@ -17,7 +17,7 @@ public class HORARIO {
     
     public void horario(int hora,int minuto,int hora_de_chegada,int horacerta,String Entrada_ou_Saida){
         
-        if(Entrada_ou_Saida.equals("Entrada                     ")){
+        if(Entrada_ou_Saida.equals("Entrada")){
         
         if((hora>=8) && (minuto > 10) || (hora>8)){//INICIO CHEGANDO ATRASADO
             
@@ -62,7 +62,7 @@ public class HORARIO {
         
     }//FIM SE STRING FOR ENTRADA
     else
-    if(!Entrada_ou_Saida.equals("Entrada                     ")){
+    if(!Entrada_ou_Saida.equals("Entrada")){
     JOptionPane.showMessageDialog(null,"Obrigado.","Aviso",JOptionPane.INFORMATION_MESSAGE);
 }
         

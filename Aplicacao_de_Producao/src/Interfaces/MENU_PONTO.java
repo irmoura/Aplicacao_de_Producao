@@ -285,17 +285,6 @@ public class MENU_PONTO extends javax.swing.JInternalFrame {
         
         hora_de_chegada = hora;
         
-        if(BOTAO_ALTERNADOR.getText().equals("Entrada ou Saida ?")){
-            JOptionPane.showMessageDialog(null,"Selecione uma opção."
-                    ,"Aviso",JOptionPane.ERROR_MESSAGE);//É CHAMADO SE NENHUMA DAS OPÇÕES ENTRADA OU SAIDA FOR SELECIONADA
-        }
-        else
-        if(!BOTAO_ALTERNADOR.getText().equals("Entrada ou Saida ?")){
-        
-        String Entrada_ou_Saida = BOTAO_ALTERNADOR.getText();
-        
-        horario.horario(hora, minuto, hora_de_chegada, horacerta,Entrada_ou_Saida);//METODO DA CLASSE HORARIO
-        
         java.io.File DATA_DA_PASTA = new java.io.File(TELA_PRINCIPAL.letra+":\\PRODUCAO\\PONTO\\"
                 +COMBO_DIA.getSelectedItem()+"-"
                 +COMBO_MES.getSelectedItem()+"-"
@@ -304,13 +293,19 @@ public class MENU_PONTO extends javax.swing.JInternalFrame {
         
         String HORARIO = "";
         
-        if(BOTAO_ALTERNADOR.isSelected()){
+        int hora_definida = Integer.parseInt(""+COMBO_HORA.getSelectedItem());
+        
+        if(hora_definida < 16){
             HORARIO = "Entrada";
         }
         else
-        if(!BOTAO_ALTERNADOR.isSelected()){
+        {
             HORARIO = "Saida";
         }
+        
+        String Entrada_ou_Saida = HORARIO;
+        
+        horario.horario(hora, minuto, hora_de_chegada, horacerta,Entrada_ou_Saida);//METODO DA CLASSE HORARIO
         
         HORARIO += ".txt";
         
@@ -325,8 +320,6 @@ public class MENU_PONTO extends javax.swing.JInternalFrame {
         ////////////////////////////////////////
         ////////////////////////////////////////
         ////////////////////////////////////////
-        
-        if(!BOTAO_ALTERNADOR.getText().equals("Entrada ou Saida ?")){//CRIA O ARQUIVO SE ALGUMA OPCAO FOR SELECIONADA
         
         FileWriter Hora = null;
         
@@ -350,24 +343,7 @@ public class MENU_PONTO extends javax.swing.JInternalFrame {
         
         JOptionPane.showMessageDialog(null,"Ponto registrado com sucesso.","Aviso",JOptionPane.INFORMATION_MESSAGE);
         
-        }
-        
-        }
-        
     }//GEN-LAST:event_BOTAO_SALVARActionPerformed
-
-    private void BOTAO_ALTERNADORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_ALTERNADORActionPerformed
-        // TODO add your handling code here:
-        if(BOTAO_ALTERNADOR.isSelected()){
-            BOTAO_ALTERNADOR.setBackground(Color.GREEN);
-            BOTAO_ALTERNADOR.setText("Entrada                     ");
-        }
-        else
-        if(!BOTAO_ALTERNADOR.isSelected()){
-            BOTAO_ALTERNADOR.setBackground(Color.RED);
-            BOTAO_ALTERNADOR.setText("Saida                         ");
-        }
-    }//GEN-LAST:event_BOTAO_ALTERNADORActionPerformed
 
     private void BOTAO_SAIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_SAIRActionPerformed
         // TODO add your handling code here:
@@ -423,7 +399,7 @@ public class MENU_PONTO extends javax.swing.JInternalFrame {
                     ,"Aviso",JOptionPane.ERROR_MESSAGE);//É CHAMADO SE NENHUMA DAS OPÇÕES ENTRADA OU SAIDA FOR SELECIONADA
             }
             else
-            if(Verifica_Selecao.equals("Entrada                     ")){
+            if(Verifica_Selecao.equals("Entrada")){
              JOptionPane.showMessageDialog(null,"Você chegou às "+HORA+":"+MINUTO,"Registro de Horário dia "+
                      COMBO_DIA.getSelectedItem()+"-"+
                      COMBO_MES.getSelectedItem()+"-"+
@@ -431,7 +407,7 @@ public class MENU_PONTO extends javax.swing.JInternalFrame {
              horario.horario(HORA_INT, MINUTO_INT, hora_de_chegada, horacerta, Verifica_Selecao);
             }
             else
-            if(Verifica_Selecao.equals("Saida                         ")){
+            if(Verifica_Selecao.equals("Saida")){
              JOptionPane.showMessageDialog(null,"Você saiu às "+HORA+":"+MINUTO,"Registro de Horário dia "+
                      COMBO_DIA.getSelectedItem()+"-"+
                      COMBO_MES.getSelectedItem()+"-"+
@@ -457,6 +433,19 @@ public class MENU_PONTO extends javax.swing.JInternalFrame {
                 "Algoritmo em Construção",JOptionPane.WARNING_MESSAGE);
         
     }//GEN-LAST:event_BOTAO_ATRASOSActionPerformed
+
+    private void BOTAO_ALTERNADORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_ALTERNADORActionPerformed
+        // TODO add your handling code here:
+        if(BOTAO_ALTERNADOR.isSelected()){
+            BOTAO_ALTERNADOR.setBackground(Color.GREEN);
+            BOTAO_ALTERNADOR.setText("Entrada");
+        }
+        else
+        if(!BOTAO_ALTERNADOR.isSelected()){
+            BOTAO_ALTERNADOR.setBackground(Color.RED);
+            BOTAO_ALTERNADOR.setText("Saida");
+        }
+    }//GEN-LAST:event_BOTAO_ALTERNADORActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
