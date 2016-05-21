@@ -486,7 +486,7 @@ public class MENU_ORDEM_DE_SERVICO extends javax.swing.JInternalFrame {
         
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
-        for(int j = 0; j < stringDir2[j].length(); j++)
+        for(int j = 0; j < quantidade; j++)
         {
             if (stringDir2[j].contains(".txt"))
             {
