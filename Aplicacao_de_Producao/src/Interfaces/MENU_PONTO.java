@@ -237,17 +237,9 @@ public class MENU_PONTO extends javax.swing.JInternalFrame {
         
         COMBO_DIA.setSelectedIndex(dia_int-1);
 
-        if(ano_int==2016){//INICIO DEFINICOES DO ANO
-            COMBO_ANO.setSelectedIndex(0);
-        }//FIM DEFINICOES DO ANO
+        COMBO_ANO.setSelectedIndex(0);
         
-        if(mes_int>1){//INICIO DEFEINICOES DO MES
-            COMBO_MES.setSelectedIndex(mes_int-1);
-        }
-        else
-        if(mes_int==1){
-            COMBO_MES.setSelectedIndex(mes_int);
-        }//FIM DEFINICOES DO MES
+        COMBO_MES.setSelectedIndex(mes_int-1);
         
         Calendar now = Calendar.getInstance();
 
