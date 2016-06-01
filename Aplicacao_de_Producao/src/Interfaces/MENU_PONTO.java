@@ -235,13 +235,8 @@ public class MENU_PONTO extends javax.swing.JInternalFrame {
         int mes_int = Integer.parseInt(mes.format(dataSistema));
         int ano_int = Integer.parseInt(ano.format(dataSistema));
         
-        if(dia_int==1){//INICIO DEFINICOES DO DIA
-            COMBO_DIA.setSelectedIndex(dia_int);
-        }
-        else
-        if(dia_int>1){
-            COMBO_DIA.setSelectedIndex(dia_int-1);
-        }//FIM DEFINICOES DO DIA
+        COMBO_DIA.setSelectedIndex(dia_int-1);
+
         if(ano_int==2016){//INICIO DEFINICOES DO ANO
             COMBO_ANO.setSelectedIndex(0);
         }//FIM DEFINICOES DO ANO
