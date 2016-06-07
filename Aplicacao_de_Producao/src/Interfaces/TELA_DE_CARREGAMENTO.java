@@ -54,7 +54,7 @@ public class TELA_DE_CARREGAMENTO extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Aplicativo de Produção Ibyte F25");
+        setTitle("Aplicativo de Produção Ibyte");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
